@@ -1,0 +1,59 @@
+[
+  {
+    "Name": "CppWinRT-2.0.250303.1-source.tar.gz",
+    "Url": "https://codeload.github.com/microsoft/cppwinrt/tar.gz/refs/tags/2.0.250303.1",
+    "Length": 715773,
+    "Sha256": "da75b7047f4615a3db582ed8c75ee327f228b05bb47750621593594d2d0459e1"
+  },
+  {
+    "Name": "CppWinRT-MIT.txt",
+    "Length": 1162,
+    "Sha256": "9906940f61b1f0b533fa7d99baf55178b2808fbe113ea51dfbfad8572ccd5f2b"
+  },
+  {
+    "Name": "Detours-4b8c659f549b0ab21cf649377c7a84eb708f5e68-source.tar.gz",
+    "Url": "https://codeload.github.com/microsoft/Detours/tar.gz/4b8c659f549b0ab21cf649377c7a84eb708f5e68",
+    "Length": 503016,
+    "Sha256": "3242840029ea5ebfe9e269a4e731b608a9fd7226aaaab519f34217de089d05fd"
+  },
+  {
+    "Name": "Detours-MIT.txt",
+    "Length": 1122,
+    "Sha256": "f854ae8aabc0404652b48a2b3bf7f21ec174c69d73f5596934c20884eb0639ef"
+  },
+  {
+    "Name": "ExplorerTAP.dll",
+    "Url": "https://github.com/TranslucentTB/TranslucentTB/releases/download/2026.2/TranslucentTB-portable-x64.zip",
+    "ArchiveEntry": "ExplorerTAP.dll",
+    "ArchiveSha256": "0dbe8e0255c20e131cde536dcd0ae490d45989a7d360e26d0150dff1922ac420",
+    "Length": 566128,
+    "Sha256": "c48f1a06168acd7839269dde0d15ccf5d09c702512b94dd6ba9a05df1b153dc2"
+  },
+  {
+    "Name": "LICENSE.md",
+    "Length": 32196,
+    "Sha256": "982b4aa12f1eeb169feae72ae5ada1443e608343f29ccee0ce5ee58f21b1a851"
+  },
+  {
+    "Name": "README.md",
+    "Length": 1838,
+    "Sha256": "4ea1ed8a9123ffbce20ab35399a990f3c694150f4de2bd9aa69655d1f7096963"
+  },
+  {
+    "Name": "TranslucentTB-2026.2-source.zip",
+    "Url": "https://codeload.github.com/TranslucentTB/TranslucentTB/zip/refs/tags/2026.2",
+    "Length": 2801745,
+    "Sha256": "73ac414e17710de5765f2305bbbc1aaa4d88628c49d9b47a3159795d05f2f257"
+  },
+  {
+    "Name": "WIL-MIT.txt",
+    "Length": 1183,
+    "Sha256": "dea9265341829002e2c23a7372393eb2ed6e26085fb623f38a4ba0af833f30a6"
+  },
+  {
+    "Name": "WIL-v1.0.250325.1-source.tar.gz",
+    "Url": "https://codeload.github.com/microsoft/wil/tar.gz/refs/tags/v1.0.250325.1",
+    "Length": 526434,
+    "Sha256": "c9e667d5f86ded43d17b5669d243e95ca7b437e3a167c170805ffd4aa8a9a786"
+  }
+]

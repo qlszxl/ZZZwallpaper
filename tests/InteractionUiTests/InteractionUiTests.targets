@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'ControlCenter'"><StartupObject>LumaWall.ControlCenter.InteractionRegressionProgram</StartupObject></PropertyGroup>
+  <ItemGroup Condition="'$(MSBuildProjectName)' == 'ControlCenter'">
+    <Compile Remove="App.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InteractionRegression.cs" />
+  </ItemGroup>
+</Project>

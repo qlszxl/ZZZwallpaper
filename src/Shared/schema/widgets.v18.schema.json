@@ -1,0 +1,1543 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ZZZwallpaper widgets v18",
+  "description": "Widgets with configurable time appearance and optional packaged grid widgets.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "Version",
+    "Widgets",
+    "Groups",
+    "Shortcuts",
+    "LayoutGroups"
+  ],
+  "properties": {
+    "Version": {
+      "const": 18
+    },
+    "Widgets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "Id",
+          "Kind",
+          "Enabled",
+          "Screen",
+          "X",
+          "Y",
+          "Width",
+          "Height",
+          "Opacity",
+          "Group"
+        ],
+        "properties": {
+          "Id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "Kind": {
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              11
+            ]
+          },
+          "PackageWidgetId": {
+            "type": ["string", "null"]
+          },
+          "GridOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "Rows": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              },
+              "Width": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 16384
+              }
+            }
+          },
+          "InteractionLocked": {
+            "type": "boolean",
+            "default": false
+          },
+          "Enabled": {
+            "type": "boolean"
+          },
+          "Screen": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "X": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "Y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "Width": {
+            "type": "number",
+            "minimum": 0.05,
+            "maximum": 1
+          },
+          "Height": {
+            "type": "number",
+            "minimum": 0.03,
+            "maximum": 1
+          },
+          "Opacity": {
+            "type": "number",
+            "minimum": 0.35,
+            "maximum": 1
+          },
+          "Group": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "ShortcutId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "IconOnly": {
+            "type": "boolean",
+            "default": false
+          },
+          "RefreshSeconds": {
+            "enum": [
+              1,
+              2,
+              5
+            ],
+            "default": 1
+          },
+          "Icon": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 65536,
+            "description": "Local PNG, max 128x128, base64 encoded."
+          },
+          "LayoutGroupId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "LayoutOrder": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10000
+          },
+          "Locked": {
+            "type": "boolean",
+            "default": false
+          },
+          "Metrics": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 134217727,
+            "default": 3,
+            "description": "Flags: CPU 1, memory 2, GPU 4, dedicated GPU memory 8, disk read 16, disk write 32, network receive 64, network send 128."
+          },
+          "Spectrum": {
+            "type": "object",
+            "properties": {
+              "Width": {
+                "type": "integer",
+                "minimum": 24,
+                "maximum": 16384
+              },
+              "Height": {
+                "type": "integer",
+                "minimum": 24,
+                "maximum": 16384
+              },
+              "Bands": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 256
+              },
+              "Sensitivity": {
+                "type": "number",
+                "minimum": 0.25,
+                "maximum": 4,
+                "default": 1.5
+              },
+              "SmoothingMs": {
+                "type": "integer",
+                "minimum": 50,
+                "maximum": 800,
+                "default": 180
+              },
+              "Mirror": {
+                "type": "boolean",
+                "default": false
+              },
+              "Background": {
+                "type": "boolean",
+                "default": true
+              },
+              "Color": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "ColorEnd": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "Gradient": {
+                "type": "boolean"
+              },
+              "Gap": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 0.9
+              },
+              "Radius": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 40
+              },
+              "MinimumHeight": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 20
+              },
+              "Padding": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "Direction": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 3
+              },
+              "Reverse": {
+                "type": "boolean"
+              },
+              "Peaks": {
+                "type": "boolean"
+              },
+              "Shape": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 6
+              },
+              "CenterEmphasis": {
+                "type": "boolean",
+                "description": "Legacy v13 import flag; migrated to Weighting.Enabled, no longer used by renderer."
+              },
+              "Enabled": {
+                "type": "boolean"
+              },
+              "StrokeWidth": {
+                "type": "number",
+                "minimum": 0.5,
+                "maximum": 20
+              },
+              "RingRadius": {
+                "type": "number",
+                "minimum": 0.05,
+                "maximum": 0.85
+              },
+              "Opacity": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "Scale": {
+                "type": "number",
+                "minimum": 0.1,
+                "maximum": 2
+              },
+              "OffsetX": {
+                "type": "number",
+                "minimum": -1,
+                "maximum": 1
+              },
+              "OffsetY": {
+                "type": "number",
+                "minimum": -1,
+                "maximum": 1
+              },
+              "Rotation": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 360
+              },
+              "SubSpectra": {
+                "type": "array",
+                "maxItems": 8,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "Width": {
+                      "type": "integer",
+                      "minimum": 24,
+                      "maximum": 16384
+                    },
+                    "Height": {
+                      "type": "integer",
+                      "minimum": 24,
+                      "maximum": 16384
+                    },
+                    "Bands": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 256
+                    },
+                    "Sensitivity": {
+                      "type": "number",
+                      "minimum": 0.25,
+                      "maximum": 4,
+                      "default": 1.5
+                    },
+                    "SmoothingMs": {
+                      "type": "integer",
+                      "minimum": 50,
+                      "maximum": 800,
+                      "default": 180
+                    },
+                    "Mirror": {
+                      "type": "boolean",
+                      "default": false
+                    },
+                    "Background": {
+                      "type": "boolean",
+                      "default": true
+                    },
+                    "Color": {
+                      "type": "string",
+                      "pattern": "^#[0-9a-fA-F]{6}$"
+                    },
+                    "ColorEnd": {
+                      "type": "string",
+                      "pattern": "^#[0-9a-fA-F]{6}$"
+                    },
+                    "Gradient": {
+                      "type": "boolean"
+                    },
+                    "Gap": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 0.9
+                    },
+                    "Radius": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 40
+                    },
+                    "MinimumHeight": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 20
+                    },
+                    "Padding": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 100
+                    },
+                    "Direction": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 3
+                    },
+                    "Reverse": {
+                      "type": "boolean"
+                    },
+                    "Peaks": {
+                      "type": "boolean"
+                    },
+                    "Shape": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 6
+                    },
+                    "CenterEmphasis": {
+                      "type": "boolean",
+                      "description": "Legacy v13 import flag; migrated to Weighting.Enabled, no longer used by renderer."
+                    },
+                    "Enabled": {
+                      "type": "boolean"
+                    },
+                    "StrokeWidth": {
+                      "type": "number",
+                      "minimum": 0.5,
+                      "maximum": 20
+                    },
+                    "RingRadius": {
+                      "type": "number",
+                      "minimum": 0.05,
+                      "maximum": 0.85
+                    },
+                    "Opacity": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "Scale": {
+                      "type": "number",
+                      "minimum": 0.1,
+                      "maximum": 2
+                    },
+                    "OffsetX": {
+                      "type": "number",
+                      "minimum": -1,
+                      "maximum": 1
+                    },
+                    "OffsetY": {
+                      "type": "number",
+                      "minimum": -1,
+                      "maximum": 1
+                    },
+                    "Rotation": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 360
+                    },
+                    "SubSpectra": {
+                      "type": "array",
+                      "maxItems": 0
+                    },
+                    "Glow": {
+                      "type": "boolean",
+                      "default": false
+                    },
+                    "GlowIntensity": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1,
+                      "default": 0.65
+                    },
+                    "GlowRadius": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 80,
+                      "default": 18
+                    },
+                    "GlowFollowColor": {
+                      "type": "boolean",
+                      "default": true
+                    },
+                    "GlowColor": {
+                      "type": "string",
+                      "pattern": "^#[0-9a-fA-F]{6}$",
+                      "default": "#D4F500"
+                    },
+                    "SegmentHeight": {
+                      "type": "number",
+                      "minimum": 1,
+                      "maximum": 40,
+                      "default": 6
+                    },
+                    "SegmentGap": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 20,
+                      "default": 3
+                    },
+                    "Weighting": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "Enabled": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "SyncWithMain": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "Smooth": {
+                          "type": "boolean",
+                          "default": true
+                        },
+                        "Points": {
+                          "type": "array",
+                          "minItems": 2,
+                          "maxItems": 32,
+                          "description": "Ordered ascending; fixed endpoints 0 and 1; position spacing at least 0.001. Enforced by contract validation.",
+                          "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "required": [
+                              "Position",
+                              "Weight"
+                            ],
+                            "properties": {
+                              "Position": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 1
+                              },
+                              "Weight": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 1
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "Glow": {
+                "type": "boolean",
+                "default": false
+              },
+              "GlowIntensity": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0.65
+              },
+              "GlowRadius": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 80,
+                "default": 18
+              },
+              "GlowFollowColor": {
+                "type": "boolean",
+                "default": true
+              },
+              "GlowColor": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$",
+                "default": "#D4F500"
+              },
+              "SegmentHeight": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 40,
+                "default": 6
+              },
+              "SegmentGap": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 20,
+                "default": 3
+              },
+              "Weighting": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "Enabled": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "SyncWithMain": {
+                    "type": "boolean",
+                    "default": false,
+                    "const": false
+                  },
+                  "Smooth": {
+                    "type": "boolean",
+                    "default": true
+                  },
+                  "Points": {
+                    "type": "array",
+                    "minItems": 2,
+                    "maxItems": 32,
+                    "description": "Ordered ascending; fixed endpoints 0 and 1; position spacing at least 0.001. Enforced by contract validation.",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "Position",
+                        "Weight"
+                      ],
+                      "properties": {
+                        "Position": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        },
+                        "Weight": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "Visual": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "Width": {
+                "type": "integer",
+                "minimum": 24,
+                "maximum": 16384
+              },
+              "Height": {
+                "type": "integer",
+                "minimum": 24,
+                "maximum": 16384
+              },
+              "Text": {
+                "type": "string",
+                "maxLength": 2000
+              },
+              "FontSize": {
+                "type": "number",
+                "minimum": 8,
+                "maximum": 240
+              },
+              "Bold": {
+                "type": "boolean"
+              },
+              "Alignment": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2
+              },
+              "TextColor": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "FillColor": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "Background": {
+                "type": "boolean"
+              },
+              "FillOpacity": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "Radius": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 300
+              },
+              "Padding": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "BorderWidth": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 20
+              },
+              "BorderColor": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "Image": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 2800000
+              },
+              "StickerShape": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 3
+              },
+              "ImageFit": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2
+              },
+              "FlipHorizontal": {
+                "type": "boolean"
+              },
+              "MaskShape": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "Gradient": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 4
+              },
+              "ClickThrough": {
+                "type": "boolean"
+              },
+              "TimeStyle": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2,
+                "default": 0,
+                "description": "Time widgets only: 0 grooved card (A), 1 floating typography (B), 2 instrument dial (C). Visual.Width/Height may be changed independently."
+              },
+              "TimeAppearance": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "DigitFont": {
+                    "type": "integer",
+                    "description": "数字字体; 0: Saira Condensed, 1: 思源黑体",
+                    "default": 0,
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "DigitSlant": {
+                    "type": "number",
+                    "description": "数字倾斜",
+                    "default": 12.407418527400743,
+                    "minimum": -15,
+                    "maximum": 25
+                  },
+                  "DigitSpacing": {
+                    "type": "number",
+                    "description": "数字字距",
+                    "default": 1,
+                    "minimum": 0,
+                    "maximum": 12
+                  },
+                  "DigitWidth": {
+                    "type": "number",
+                    "description": "数字横向比例",
+                    "default": 1,
+                    "minimum": 0.6,
+                    "maximum": 1.25
+                  },
+                  "NumberGradient": {
+                    "type": "boolean",
+                    "description": "数字明暗渐变",
+                    "default": true
+                  },
+                  "NumberShadow": {
+                    "type": "boolean",
+                    "description": "数字阴影",
+                    "default": true
+                  },
+                  "ShadowOpacity": {
+                    "type": "number",
+                    "description": "阴影不透明度",
+                    "default": 0.7058823529411765,
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "ShadowDistance": {
+                    "type": "number",
+                    "description": "阴影距离",
+                    "default": 4,
+                    "minimum": 0,
+                    "maximum": 12
+                  },
+                  "MainOffsetX": {
+                    "type": "number",
+                    "description": "主数字水平偏移",
+                    "default": 0,
+                    "minimum": -60,
+                    "maximum": 60
+                  },
+                  "MainOffsetY": {
+                    "type": "number",
+                    "description": "主数字垂直偏移",
+                    "default": 0,
+                    "minimum": -60,
+                    "maximum": 60
+                  },
+                  "TextSlant": {
+                    "type": "number",
+                    "description": "文字倾斜",
+                    "default": 12.407418527400743,
+                    "minimum": -15,
+                    "maximum": 25
+                  },
+                  "TitleScale": {
+                    "type": "number",
+                    "description": "标题大小",
+                    "default": 1,
+                    "minimum": 0.5,
+                    "maximum": 1.5
+                  },
+                  "SecondaryScale": {
+                    "type": "number",
+                    "description": "辅助文字大小",
+                    "default": 1,
+                    "minimum": 0.5,
+                    "maximum": 1.5
+                  },
+                  "TitleOffsetY": {
+                    "type": "number",
+                    "description": "标题垂直偏移",
+                    "default": 0,
+                    "minimum": -40,
+                    "maximum": 40
+                  },
+                  "DetailsOffsetY": {
+                    "type": "number",
+                    "description": "辅助文字垂直偏移",
+                    "default": 0,
+                    "minimum": -40,
+                    "maximum": 40
+                  },
+                  "FollowAccent": {
+                    "type": "boolean",
+                    "description": "强调色跟随主题",
+                    "default": true
+                  },
+                  "AccentColor": {
+                    "type": "string",
+                    "description": "强调色",
+                    "default": "#F4E600",
+                    "pattern": "^#[0-9A-Fa-f]{6}$"
+                  },
+                  "SecondaryColor": {
+                    "type": "string",
+                    "description": "辅助文字颜色",
+                    "default": "#B0B0B0",
+                    "pattern": "^#[0-9A-Fa-f]{6}$"
+                  },
+                  "DecorationColor": {
+                    "type": "string",
+                    "description": "装饰文字颜色",
+                    "default": "#696969",
+                    "pattern": "^#[0-9A-Fa-f]{6}$"
+                  },
+                  "ShowBrand": {
+                    "type": "boolean",
+                    "description": "显示品牌栏",
+                    "default": true
+                  },
+                  "ShowFrame": {
+                    "type": "boolean",
+                    "description": "显示外框",
+                    "default": true
+                  },
+                  "GrooveDepth": {
+                    "type": "number",
+                    "description": "凹槽深度",
+                    "default": 1,
+                    "minimum": 0,
+                    "maximum": 2
+                  },
+                  "PanelRadius": {
+                    "type": "number",
+                    "description": "内框圆角比例",
+                    "default": 1,
+                    "minimum": 0,
+                    "maximum": 2
+                  },
+                  "ShowTexture": {
+                    "type": "boolean",
+                    "description": "显示斜纹",
+                    "default": true
+                  },
+                  "TextureOpacity": {
+                    "type": "number",
+                    "description": "斜纹不透明度",
+                    "default": 1,
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "TextureSpacing": {
+                    "type": "number",
+                    "description": "斜纹间距",
+                    "default": 7,
+                    "minimum": 4,
+                    "maximum": 24
+                  },
+                  "ShowAccentLine": {
+                    "type": "boolean",
+                    "description": "显示强调短线",
+                    "default": true
+                  },
+                  "ShowDividers": {
+                    "type": "boolean",
+                    "description": "显示分隔线",
+                    "default": true
+                  },
+                  "DividerOpacity": {
+                    "type": "number",
+                    "description": "分隔线不透明度",
+                    "default": 1,
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "ShowScrews": {
+                    "type": "boolean",
+                    "description": "显示螺钉",
+                    "default": true
+                  },
+                  "DialScale": {
+                    "type": "number",
+                    "description": "圆盘大小",
+                    "default": 1,
+                    "minimum": 0.65,
+                    "maximum": 1.05
+                  },
+                  "TickMode": {
+                    "type": "integer",
+                    "description": "刻度; 0: 全部刻度, 1: 仅整点, 2: 隐藏刻度",
+                    "default": 0,
+                    "minimum": 0,
+                    "maximum": 2
+                  },
+                  "DialNumbers": {
+                    "type": "integer",
+                    "description": "表盘数字; 0: 四个方向, 1: 十二个数字, 2: 隐藏数字",
+                    "default": 0,
+                    "minimum": 0,
+                    "maximum": 2
+                  },
+                  "HandWidth": {
+                    "type": "number",
+                    "description": "指针粗细",
+                    "default": 1,
+                    "minimum": 0.5,
+                    "maximum": 2
+                  },
+                  "HourHandLength": {
+                    "type": "number",
+                    "description": "时针长度",
+                    "default": 1,
+                    "minimum": 0.5,
+                    "maximum": 1.2
+                  },
+                  "MinuteHandLength": {
+                    "type": "number",
+                    "description": "分针长度",
+                    "default": 1,
+                    "minimum": 0.5,
+                    "maximum": 1.1
+                  },
+                  "SecondHandColor": {
+                    "type": "string",
+                    "description": "秒针颜色",
+                    "default": "#696969",
+                    "pattern": "^#[0-9A-Fa-f]{6}$"
+                  },
+                  "SecondsScale": {
+                    "type": "number",
+                    "description": "小号秒数大小",
+                    "default": 1,
+                    "minimum": 0.5,
+                    "maximum": 1.5
+                  },
+                  "ShowDigitalTime": {
+                    "type": "boolean",
+                    "description": "显示数字时间",
+                    "default": true
+                  },
+                  "ShowCountdownTitle": {
+                    "type": "boolean",
+                    "description": "显示倒计时标题",
+                    "default": true
+                  },
+                  "ShowDayUnit": {
+                    "type": "boolean",
+                    "description": "显示天数单位",
+                    "default": true
+                  },
+                  "PadDays": {
+                    "type": "boolean",
+                    "description": "天数补零",
+                    "default": true
+                  },
+                  "ShowRemainingTime": {
+                    "type": "boolean",
+                    "description": "显示剩余时分秒",
+                    "default": true
+                  },
+                  "ShowTargetDate": {
+                    "type": "boolean",
+                    "description": "显示目标日期",
+                    "default": true
+                  },
+                  "ShowProgress": {
+                    "type": "boolean",
+                    "description": "显示进度",
+                    "default": true
+                  },
+                  "ProgressThickness": {
+                    "type": "number",
+                    "description": "进度条粗细",
+                    "default": 1,
+                    "minimum": 0.5,
+                    "maximum": 2
+                  },
+                  "ProgressTrackColor": {
+                    "type": "string",
+                    "description": "进度条底色",
+                    "default": "#181818",
+                    "pattern": "^#[0-9A-Fa-f]{6}$"
+                  },
+                  "ShowPercent": {
+                    "type": "boolean",
+                    "description": "显示进度百分比",
+                    "default": true
+                  },
+                  "RingSegments": {
+                    "type": "integer",
+                    "description": "圆环分段数",
+                    "default": 64,
+                    "minimum": 12,
+                    "maximum": 120
+                  },
+                  "RingThickness": {
+                    "type": "number",
+                    "description": "圆环粗细",
+                    "default": 1,
+                    "minimum": 0.5,
+                    "maximum": 1.5
+                  },
+                  "RingStartAngle": {
+                    "type": "number",
+                    "description": "圆环起始角度",
+                    "default": 0,
+                    "minimum": 0,
+                    "maximum": 360
+                  },
+                  "RingClockwise": {
+                    "type": "boolean",
+                    "description": "顺时针进度",
+                    "default": true
+                  },
+                  "RingTrackColor": {
+                    "type": "string",
+                    "description": "圆环底色",
+                    "default": "#343434",
+                    "pattern": "^#[0-9A-Fa-f]{6}$"
+                  },
+                  "ShowRingEndpoint": {
+                    "type": "boolean",
+                    "description": "显示进度端点",
+                    "default": true
+                  },
+                  "ShowStatus": {
+                    "type": "boolean",
+                    "description": "显示专注状态",
+                    "default": true
+                  },
+                  "ShowRound": {
+                    "type": "boolean",
+                    "description": "显示轮次",
+                    "default": true
+                  },
+                  "ShowButtons": {
+                    "type": "boolean",
+                    "description": "显示操作按钮",
+                    "default": true
+                  },
+                  "ShowResetButton": {
+                    "type": "boolean",
+                    "description": "显示重置按钮",
+                    "default": true
+                  },
+                  "ShowSkipButton": {
+                    "type": "boolean",
+                    "description": "显示跳过按钮",
+                    "default": true
+                  },
+                  "ButtonScale": {
+                    "type": "number",
+                    "description": "按钮大小",
+                    "default": 1,
+                    "minimum": 0.6,
+                    "maximum": 1.2
+                  },
+                  "ButtonSpacing": {
+                    "type": "number",
+                    "description": "按钮间距",
+                    "default": 1,
+                    "minimum": 0.65,
+                    "maximum": 1.1
+                  },
+                  "ButtonIconScale": {
+                    "type": "number",
+                    "description": "按钮图标大小",
+                    "default": 1,
+                    "minimum": 0.6,
+                    "maximum": 1.5
+                  },
+                  "ButtonOffsetY": {
+                    "type": "number",
+                    "description": "按钮垂直偏移",
+                    "default": 0,
+                    "minimum": -20,
+                    "maximum": 20
+                  }
+                }
+              }
+            }
+          },
+          "Layer": {
+            "type": "integer",
+            "minimum": -999,
+            "maximum": 999,
+            "default": 0,
+            "description": "Higher layers cover lower layers; equal layers follow component list order, first in front."
+          },
+          "Search": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "Width": {
+                "type": "integer",
+                "minimum": 120,
+                "maximum": 16384,
+                "default": 360
+              },
+              "Height": {
+                "type": "integer",
+                "minimum": 44,
+                "maximum": 16384,
+                "default": 44
+              },
+              "Radius": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 8192,
+                "default": 22
+              },
+              "Engine": {
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "default": 0
+              },
+              "CustomUrl": {
+                "type": "string",
+                "maxLength": 4096,
+                "default": "",
+                "description": "HTTP(S) URL with {query} in path or query; exported only when targets are selected."
+              }
+            }
+          },
+          "Performance": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "RefreshMilliseconds": {
+                "type": "integer",
+                "anyOf": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "minimum": 100,
+                    "maximum": 60000
+                  }
+                ],
+                "default": 0
+              },
+              "Flow": {
+                "enum": [
+                  0,
+                  1,
+                  2
+                ],
+                "default": 2
+              },
+              "Columns": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8,
+                "default": 2
+              },
+              "Order": {
+                "type": "array",
+                "uniqueItems": true,
+                "maxItems": 27,
+                "items": {
+                  "enum": [
+                    1,
+                    2,
+                    4,
+                    8,
+                    16,
+                    32,
+                    64,
+                    128,
+                    256,
+                    512,
+                    1024,
+                    2048,
+                    4096,
+                    8192,
+                    16384,
+                    32768,
+                    65536,
+                    131072,
+                    262144,
+                    524288,
+                    1048576,
+                    2097152,
+                    4194304,
+                    8388608,
+                    16777216,
+                    33554432,
+                    67108864
+                  ]
+                }
+              }
+            }
+          },
+          "Clock": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "Face": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0
+              },
+              "Use24Hour": {
+                "type": "boolean",
+                "default": true
+              },
+              "ShowSeconds": {
+                "type": "boolean",
+                "default": true
+              },
+              "ShowDate": {
+                "type": "boolean",
+                "default": true
+              },
+              "ShowWeekday": {
+                "type": "boolean",
+                "default": true
+              },
+              "DateFormat": {
+                "type": "integer",
+                "description": "0 yyyy.MM.dd; 1 yyyy/MM/dd; 2 MM月dd日",
+                "minimum": 0,
+                "maximum": 2,
+                "default": 0
+              }
+            }
+          },
+          "Countdown": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "Title": {
+                "type": "string",
+                "maxLength": 80,
+                "default": "倒计时"
+              },
+              "Target": {
+                "type": "string",
+                "format": "date-time",
+                "maxLength": 40
+              },
+              "ShowSeconds": {
+                "type": "boolean",
+                "default": true
+              },
+              "CountUpAfterEnd": {
+                "type": "boolean",
+                "default": false
+              }
+            }
+          },
+          "Focus": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "FocusMinutes": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 240,
+                "default": 25
+              },
+              "BreakMinutes": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 120,
+                "default": 5
+              },
+              "LongBreakMinutes": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 240,
+                "default": 15
+              },
+              "SessionsPerLongBreak": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 12,
+                "default": 4
+              },
+              "AutoStart": {
+                "type": "boolean",
+                "default": false
+              },
+              "Running": {
+                "type": "boolean",
+                "default": false
+              },
+              "Phase": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2,
+                "default": 0
+              },
+              "CompletedSessions": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2147483647,
+                "default": 0
+              },
+              "RemainingSeconds": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 14400,
+                "default": 1500
+              },
+              "Deadline": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time",
+                "maxLength": 40
+              }
+            }
+          },
+          "AlwaysOnTop": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      }
+    },
+    "Groups": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "Id",
+          "Name",
+          "Order"
+        ],
+        "properties": {
+          "Id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "Name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "Order": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "Shortcuts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "Id",
+          "Name",
+          "Url",
+          "Group",
+          "Order",
+          "Icon"
+        ],
+        "properties": {
+          "Id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "Name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "Url": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096,
+            "description": "Legacy field name: website URL, absolute folder path, or a single-line cmd.exe command, according to Kind."
+          },
+          "Group": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "Order": {
+            "type": "integer"
+          },
+          "Icon": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 65536
+          },
+          "Kind": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "default": 0,
+            "description": "0 website, 1 folder, 2 command"
+          },
+          "WorkingDirectory": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 4096
+          },
+          "ShowCommandWindow": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "Kind": {
+                  "const": 0
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "Url": {
+                  "format": "uri",
+                  "pattern": "^https?://"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "LayoutGroups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "Id",
+          "Name",
+          "Screen",
+          "X",
+          "Y",
+          "Flow",
+          "HorizontalAlignment",
+          "VerticalAlignment",
+          "Gap",
+          "Columns"
+        ],
+        "properties": {
+          "Id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "Name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "Screen": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "X": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "Y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "Flow": {
+            "enum": [
+              0,
+              1,
+              2
+            ]
+          },
+          "HorizontalAlignment": {
+            "enum": [
+              0,
+              1,
+              2
+            ]
+          },
+          "VerticalAlignment": {
+            "enum": [
+              0,
+              1,
+              2
+            ]
+          },
+          "Gap": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 80
+          },
+          "Columns": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 8
+          },
+          "Locked": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      }
+    }
+  },
+  "$id": "widgets.v18.schema.json"
+}

@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ZZZwallpaper widgets v1",
+  "description": "Default is no widgets. Group references, unique identifiers, URL credentials and PNG dimensions are additionally validated in Widgets.cs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "Version",
+    "Widgets",
+    "Groups",
+    "Shortcuts"
+  ],
+  "properties": {
+    "Version": {
+      "const": 1
+    },
+    "Widgets": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "Id",
+          "Kind",
+          "Enabled",
+          "Screen",
+          "X",
+          "Y",
+          "Width",
+          "Height",
+          "Opacity",
+          "Group"
+        ],
+        "properties": {
+          "Id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "Kind": {
+            "enum": [
+              0,
+              1
+            ]
+          },
+          "Enabled": {
+            "type": "boolean"
+          },
+          "Screen": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "X": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "Y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "Width": {
+            "type": "number",
+            "minimum": 0.05,
+            "maximum": 1
+          },
+          "Height": {
+            "type": "number",
+            "minimum": 0.03,
+            "maximum": 1
+          },
+          "Opacity": {
+            "type": "number",
+            "minimum": 0.35,
+            "maximum": 1
+          },
+          "Group": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          }
+        }
+      }
+    },
+    "Groups": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "Id",
+          "Name",
+          "Order"
+        ],
+        "properties": {
+          "Id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "Name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "Order": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "Shortcuts": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "Id",
+          "Name",
+          "Url",
+          "Group",
+          "Order",
+          "Icon"
+        ],
+        "properties": {
+          "Id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "Name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "Url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https?://",
+            "maxLength": 4096
+          },
+          "Group": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "Order": {
+            "type": "integer"
+          },
+          "Icon": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 65536
+          }
+        }
+      }
+    }
+  }
+}

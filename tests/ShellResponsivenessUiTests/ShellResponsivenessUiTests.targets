@@ -1,0 +1,24 @@
+<Project>
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'ControlCenter'">
+    <StartupObject>LumaWall.ControlCenter.ShellResponsivenessProgram</StartupObject>
+    <DefineConstants>$(DefineConstants);SHELL_RESPONSIVENESS_REGRESSION</DefineConstants>
+    <DefineConstants Condition="'$(ShellResponsivenessOptimized)' == 'true'">$(DefineConstants);SHELL_RESPONSIVENESS_OPTIMIZED</DefineConstants>
+  </PropertyGroup>
+  <Target Name="ValidateShellResponsivenessSources" BeforeTargets="BeforeBuild" Condition="'$(MSBuildProjectName)' == 'ControlCenter'">
+    <Error Condition="!Exists('$(ShellResponsivenessSourcesDirectory)/instrumentation-manifest.json')" Text="Generate isolated shell source copies with Prepare-ShellResponsivenessSources.ps1 and set ShellResponsivenessSourcesDirectory." />
+  </Target>
+  <ItemGroup Condition="'$(MSBuildProjectName)' == 'ControlCenter'">
+    <Compile Remove="App.xaml.cs" />
+    <Compile Remove="App.MenuVolume.cs" />
+    <Compile Remove="Adapters/System/StartupRegistration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)../DecodeDialogUiTests/StartupRegistrationFixture.cs" />
+    <Compile Remove="Shell/MainWindow.Placement.cs" />
+    <Compile Remove="Shell/MainWindow.Chrome.cs" />
+    <Compile Remove="Shell/MainWindow.Branding.cs" />
+    <Compile Include="$(ShellResponsivenessSourcesDirectory)/MainWindow.Placement.cs" />
+    <Compile Include="$(ShellResponsivenessSourcesDirectory)/MainWindow.Chrome.cs" />
+    <Compile Include="$(ShellResponsivenessSourcesDirectory)/MainWindow.Branding.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ShellResponsivenessRegression.cs" />
+    <Content Include="$(ShellResponsivenessSourcesDirectory)/instrumentation-manifest.json" Link="shell-instrumentation-manifest.json" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+</Project>

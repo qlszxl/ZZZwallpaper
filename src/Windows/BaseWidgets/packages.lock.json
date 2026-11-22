@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net8.0-windows7.0": {
+      "contracts": {
+        "type": "Project"
+      },
+      "ZZZwallpaper.WidgetHost": {
+        "type": "Project",
+        "dependencies": {
+          "Contracts": "[1.0.0, )"
+        }
+      }
+    },
+    "net8.0-windows7.0/win-x64": {}
+  }
+}

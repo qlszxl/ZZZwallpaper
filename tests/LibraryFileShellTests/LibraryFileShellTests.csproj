@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/Shared/Application/Library/LibrarySourceFiles.cs" Link="LibrarySourceFiles.cs"/>
+    <Compile Include="../../src/Shared/Contracts/Steam/SteamWallpaperModels.cs" Link="SteamWallpaperModels.cs"/>
+    <Compile Include="../../src/Windows/ControlCenter/Adapters/WindowsLibrarySourceFileOperations.cs" Link="WindowsLibrarySourceFileOperations.cs"/>
+  </ItemGroup>
+</Project>

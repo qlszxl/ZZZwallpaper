@@ -1,0 +1,23 @@
+{
+  "apiVersion": 2,
+  "id": "feature-fixture",
+  "version": "1.0.0",
+  "name": "接口验收",
+  "effects": [
+    {
+      "id": "invert",
+      "title": "反相",
+      "icon": "Color",
+      "implementation": "invert.cso"
+    }
+  ],
+  "widgets": [
+    {
+      "id": "meter",
+      "title": "仪表",
+      "icon": "Widgets",
+      "implementation": "Fixture.dll",
+      "entryPoint": "FeatureFixture.Meter"
+    }
+  ]
+}

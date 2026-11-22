@@ -1,0 +1,175 @@
+{
+  "apiVersion": 2,
+  "version": "1.1.0",
+  "id": "base",
+  "name": "基础扩展包",
+  "effects": [
+    {
+      "id": "Color",
+      "title": "色彩调整",
+      "icon": "Color"
+    },
+    {
+      "id": "RgbSplit",
+      "title": "RGB 色散",
+      "icon": "Color"
+    },
+    {
+      "id": "Glow",
+      "title": "辉光",
+      "icon": "Dots"
+    },
+    {
+      "id": "Vignette",
+      "title": "暗角",
+      "icon": "Color"
+    },
+    {
+      "id": "Noise",
+      "title": "胶片颗粒",
+      "icon": "Glitch"
+    },
+    {
+      "id": "Scanlines",
+      "title": "扫描线",
+      "icon": "Scan"
+    },
+    {
+      "id": "Glitch",
+      "title": "数字故障",
+      "icon": "Glitch"
+    },
+    {
+      "id": "LargeGlitch",
+      "title": "故障突发",
+      "icon": "Glitch"
+    },
+    {
+      "id": "Dots",
+      "title": "动态点阵",
+      "icon": "Dots"
+    },
+    {
+      "id": "DotRipple",
+      "title": "点阵涟漪",
+      "icon": "Dots"
+    },
+    {
+      "id": "Blur",
+      "title": "模糊",
+      "icon": "Blur"
+    },
+    {
+      "id": "Distortion",
+      "title": "镜头扭曲",
+      "icon": "Distortion"
+    },
+    {
+      "id": "ZoomTunnel",
+      "title": "缩放穿梭",
+      "icon": "Distortion"
+    },
+    {
+      "id": "Particles",
+      "title": "粒子",
+      "icon": "Dots"
+    },
+    {
+      "id": "WaterWave",
+      "title": "水波扭曲",
+      "icon": "Distortion"
+    },
+    {
+      "id": "EdgeOutline",
+      "title": "边缘描边",
+      "icon": "Scan"
+    },
+    {
+      "id": "Pixelate",
+      "title": "马赛克",
+      "icon": "Dots"
+    },
+    {
+      "id": "SunPrism",
+      "title": "阳光色散",
+      "icon": "Color"
+    },
+    {
+      "id": "LightFlare",
+      "title": "光芒",
+      "icon": "Dots"
+    },
+    {
+      "id": "Transform",
+      "title": "变换",
+      "icon": "Compare"
+    },
+    {
+      "id": "HideTaskbar",
+      "title": "任务栏设置",
+      "icon": "Taskbar"
+    },
+    {
+      "id": "AudioReactive",
+      "title": "音频联动",
+      "icon": "Audio"
+    },
+    {
+      "id": "MaskLibrary",
+      "title": "遮罩",
+      "icon": "Scan"
+    }
+  ],
+  "widgets": [
+    {
+      "id": "Search",
+      "title": "搜索框",
+      "icon": "Search"
+    },
+    {
+      "id": "Shortcuts",
+      "title": "快捷卡片",
+      "icon": "Link"
+    },
+    {
+      "id": "Performance",
+      "title": "性能监测",
+      "icon": "Monitor"
+    },
+    {
+      "id": "Spectrum",
+      "title": "音频频谱",
+      "icon": "Spectrum"
+    },
+    {
+      "id": "Text",
+      "title": "文本",
+      "icon": "Text"
+    },
+    {
+      "id": "Sticker",
+      "title": "贴纸",
+      "icon": "Image"
+    },
+    {
+      "id": "Mask",
+      "title": "遮罩",
+      "icon": "Color"
+    },
+    {
+      "id": "Clock",
+      "title": "时钟与日期",
+      "icon": "Clock"
+    },
+    {
+      "id": "Countdown",
+      "title": "倒计时",
+      "icon": "Countdown"
+    },
+    {
+      "id": "FocusTimer",
+      "title": "专注计时器",
+      "icon": "FocusTimer"
+    }
+  ]
+}

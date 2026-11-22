@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework><OutputType>Exe</OutputType>
+    <AssemblyName>WidgetContentTests</AssemblyName><UseWPF>true</UseWPF><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Contracts" HintPath="$(RuntimeDir)/Contracts.dll"/>
+    <Reference Include="Storage" HintPath="$(RuntimeDir)/Storage.dll"/>
+    <Reference Include="ZZZwallpaper.WidgetHost" HintPath="$(RuntimeDir)/Widgets/ZZZwallpaper.WidgetHost.dll"/>
+    <Content Include="$(RuntimeDir)/av*.dll;$(RuntimeDir)/sw*.dll" Link="%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest"/>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.11"/>
+  </ItemGroup>
+</Project>

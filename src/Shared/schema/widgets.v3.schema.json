@@ -1,0 +1,234 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ZZZwallpaper widgets v3",
+  "description": "Search, shortcut and system performance widgets; per-widget icons, icon-only cards and persisted placement. v1/v2 configurations migrate without removing data.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "Version",
+    "Widgets",
+    "Groups",
+    "Shortcuts"
+  ],
+  "properties": {
+    "Version": {
+      "const": 3
+    },
+    "Widgets": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "Id",
+          "Kind",
+          "Enabled",
+          "Screen",
+          "X",
+          "Y",
+          "Width",
+          "Height",
+          "Opacity",
+          "Group"
+        ],
+        "properties": {
+          "Id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "Kind": {
+            "enum": [
+              0,
+              1,
+              2
+            ]
+          },
+          "Enabled": {
+            "type": "boolean"
+          },
+          "Screen": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "X": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "Y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "Width": {
+            "type": "number",
+            "minimum": 0.05,
+            "maximum": 1
+          },
+          "Height": {
+            "type": "number",
+            "minimum": 0.03,
+            "maximum": 1
+          },
+          "Opacity": {
+            "type": "number",
+            "minimum": 0.35,
+            "maximum": 1
+          },
+          "Group": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "ShortcutId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "IconOnly": {
+            "type": "boolean",
+            "default": false
+          },
+          "RefreshSeconds": {
+            "enum": [
+              1,
+              2,
+              5
+            ],
+            "default": 1
+          },
+          "Icon": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 65536,
+            "description": "Local PNG, max 128x128, base64 encoded."
+          }
+        }
+      }
+    },
+    "Groups": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "Id",
+          "Name",
+          "Order"
+        ],
+        "properties": {
+          "Id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "Name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "Order": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "Shortcuts": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "Id",
+          "Name",
+          "Url",
+          "Group",
+          "Order",
+          "Icon"
+        ],
+        "properties": {
+          "Id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "Name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "Url": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096,
+            "description": "Legacy field name: website URL, absolute folder path, or a single-line cmd.exe command, according to Kind."
+          },
+          "Group": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "Order": {
+            "type": "integer"
+          },
+          "Icon": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 65536
+          },
+          "Kind": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "default": 0,
+            "description": "0 website, 1 folder, 2 command"
+          },
+          "WorkingDirectory": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 4096
+          },
+          "ShowCommandWindow": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "Kind": {
+                  "const": 0
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "Url": {
+                  "format": "uri",
+                  "pattern": "^https?://"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

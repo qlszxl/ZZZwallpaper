@@ -1,0 +1,6 @@
+.git-revision export-subst
+# Preserve the original notice bytes recorded in the taskbar dependency manifest.
+third_party/translucenttb/LICENSE.md -text
+third_party/translucenttb/README.md -text
+third_party/translucenttb/*-MIT.txt -text
+third_party/licenses/FFmpeg-DEPENDENCY-NOTICES.txt -text

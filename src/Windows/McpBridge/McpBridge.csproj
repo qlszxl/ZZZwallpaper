@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net8.0-windows</TargetFramework>
+    <AssemblyName>ZZZwallpaper.Mcp</AssemblyName><InformationalVersion>$(Version)</InformationalVersion>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier><SelfContained>true</SelfContained>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  <ItemGroup><PackageReference Include="ModelContextProtocol" Version="2.2.0"/><PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.10"/></ItemGroup>
+  <ItemGroup><ProjectReference Include="../../Shared/Automation/Automation.csproj"/></ItemGroup>
+  <ItemGroup><Compile Include="../Shared/InstallationLifetime.cs" Link="InstallationLifetime.cs"/></ItemGroup>
+  <ItemGroup><Content Include="../../Shared/Automation/AgentGuide.md" Link="AGENTS.md" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+</Project>

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup>
+  <OutputType>WinExe</OutputType><TargetFramework>net8.0-windows</TargetFramework><UseWindowsForms>true</UseWindowsForms><UseWPF>true</UseWPF>
+  <AssemblyName>ZZZwallpaper.WidgetHost</AssemblyName><AssemblyTitle>ZZZwallpaper Widgets</AssemblyTitle><Product>ZZZwallpaper</Product><RootNamespace>LumaWall.WidgetHost</RootNamespace><InformationalVersion>$(Version)</InformationalVersion>
+  <ApplicationIcon>../ControlCenter/Assets/Branding/App.ico</ApplicationIcon>
+  <RuntimeIdentifier>win-x64</RuntimeIdentifier><PlatformTarget>x64</PlatformTarget><SelfContained>true</SelfContained>
+  <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  <ApplicationManifest>../WallpaperHost/WallpaperHost.manifest</ApplicationManifest>
+ </PropertyGroup>
+ <ItemGroup><ProjectReference Include="../../Shared/Contracts/Contracts.csproj"/></ItemGroup>
+ <ItemGroup><Compile Include="../Shared/WidgetPlacement.cs" Link="WidgetPlacement.cs"/></ItemGroup>
+ <ItemGroup><Content Include="../ControlCenter/Assets/Fonts/*" Link="Assets/Fonts/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+ <ItemGroup><Content Include="../ControlCenter/Assets/Branding/wordmark.png" Link="Assets/Branding/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+  <ItemGroup><Compile Remove="WidgetContentFactory.cs;SearchWidgetContent.cs;ShortcutWidgetContent.cs;TimeWidgetContent.cs;TimeWidgetTypography.cs;TimeWidgetArtwork.cs;VisualWidgetContent.cs;SpectrumWidgetContent.cs;SpectrumView.cs;PerformanceWidgetContent.cs" /></ItemGroup>
+</Project>

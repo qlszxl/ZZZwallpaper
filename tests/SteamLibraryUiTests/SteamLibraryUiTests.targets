@@ -1,0 +1,17 @@
+<Project>
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'ControlCenter'">
+    <StartupObject>LumaWall.ControlCenter.EffectReorderRegressionProgram</StartupObject>
+    <DefineConstants>$(DefineConstants);STEAM_LIBRARY_REGRESSION</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(MSBuildProjectName)' == 'ControlCenter'">
+    <Compile Remove="App.xaml.cs" />
+    <Compile Remove="App.MenuVolume.cs" />
+    <Compile Remove="Shell/MainWindow.Placement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)../EffectReorderUiTests/EffectReorderRegression.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)../EffectReorderUiTests/EffectReorderPlacement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SteamLibraryUiChecks.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SteamSceneAssetsUiChecks.cs" />
+    <Content Include="$(MSBuildThisFileDirectory)../../artifacts/scan-cards-fix-fixtures/clip600.mp4"
+             Link="SteamLibraryFixtures/video.mp4" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

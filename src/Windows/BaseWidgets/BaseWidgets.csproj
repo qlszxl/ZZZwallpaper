@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework><UseWPF>true</UseWPF><UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>ZZZwallpaper.BaseWidgets</AssemblyName><RootNamespace>LumaWall.WidgetHost</RootNamespace>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier><RestorePackagesWithLockFile>true</RestorePackagesWithLockFile><SelfContained>true</SelfContained>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../WidgetHost/WidgetHost.csproj" />
+    <Compile Include="../WidgetHost/GlobalUsings.cs;../WidgetHost/DiagnosticUsings.cs" />
+    <Compile Include="../WidgetHost/WidgetContentFactory.cs" />
+    <Compile Include="../WidgetHost/SearchWidgetContent.cs" />
+    <Compile Include="../WidgetHost/ShortcutWidgetContent.cs" />
+    <Compile Include="../WidgetHost/TimeWidgetContent.cs" />
+    <Compile Include="../WidgetHost/TimeWidgetTypography.cs" />
+    <Compile Include="../WidgetHost/TimeWidgetArtwork.cs" />
+    <Compile Include="../WidgetHost/VisualWidgetContent.cs" />
+    <Compile Include="../WidgetHost/SpectrumWidgetContent.cs" />
+    <Compile Include="../WidgetHost/SpectrumView.cs" />
+    <Compile Include="../WidgetHost/PerformanceWidgetContent.cs" />
+  </ItemGroup>
+</Project>

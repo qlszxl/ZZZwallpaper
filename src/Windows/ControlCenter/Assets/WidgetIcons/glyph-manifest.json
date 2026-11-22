@@ -1,0 +1,187 @@
+{
+  "font": "Source Han Sans SC Heavy 2.005R",
+  "license": "SIL OFL 1.1, see ../Fonts/LICENSE.txt",
+  "render": "128 px antialiased keycaps, generated from bundled font; no external requests",
+  "glyphs": [
+    {
+      "character": "0",
+      "file": "glyph-0.png",
+      "sha256": "5a1c24f7104a219482557a552d5a4a73671b402c97ae29955f5ef20fb222ba26"
+    },
+    {
+      "character": "1",
+      "file": "glyph-1.png",
+      "sha256": "aad6f61e8e74baed7b72542c1d54ee195050e539c366a8e733a864543bae33e8"
+    },
+    {
+      "character": "2",
+      "file": "glyph-2.png",
+      "sha256": "eaf008e12fe9e44b30b7b8c20933b1d231361cd970cc283369c249f9859c8fcd"
+    },
+    {
+      "character": "3",
+      "file": "glyph-3.png",
+      "sha256": "826e923f6a681ea2c04ddf905ca5ddf1ec046cd3ba674441cf87d104721ea5bc"
+    },
+    {
+      "character": "4",
+      "file": "glyph-4.png",
+      "sha256": "29e997e78ab642a59eaf3717a8905e08a3e68677ad9882449d33f81bbb6a0b8e"
+    },
+    {
+      "character": "5",
+      "file": "glyph-5.png",
+      "sha256": "89ff4cd933ad4b177efe679e7f5dcc4ea022e95e9ecce82a63878d8c26a9959a"
+    },
+    {
+      "character": "6",
+      "file": "glyph-6.png",
+      "sha256": "5bc71271c7d23e528422d215fe77b567701438475d5f123a59de1b77470fd694"
+    },
+    {
+      "character": "7",
+      "file": "glyph-7.png",
+      "sha256": "68e95c713793e5a6448b0c0d9f6fec314c4bbd0447954d1660902309e2247262"
+    },
+    {
+      "character": "8",
+      "file": "glyph-8.png",
+      "sha256": "d17c085fa2d2ff92ca271275e25125915189b65f8716df854860f355c28b860b"
+    },
+    {
+      "character": "9",
+      "file": "glyph-9.png",
+      "sha256": "0f9fa2c92fede7ac8d48fa245377241afc6097fc5bbd19ac4f5e5d6e7f570f9c"
+    },
+    {
+      "character": "A",
+      "file": "glyph-A.png",
+      "sha256": "d9a96f0553781d54f9975dad7ab6fb5d18806c2cfa9faa0be2a04b35df0d4925"
+    },
+    {
+      "character": "B",
+      "file": "glyph-B.png",
+      "sha256": "0d5de87d27ec32a07b239ecb8d3cfb6d46da3ad16ecfdd7ac6e16bdb2c97c7c7"
+    },
+    {
+      "character": "C",
+      "file": "glyph-C.png",
+      "sha256": "1b45c10726c895ee2defc64d45ba6d9d3b6e90507972c2d35a5a1dde6bee172a"
+    },
+    {
+      "character": "D",
+      "file": "glyph-D.png",
+      "sha256": "df37ce6fbc6a26f5dcab35f63036b2632a74318879d5704a41271c73cab7939f"
+    },
+    {
+      "character": "E",
+      "file": "glyph-E.png",
+      "sha256": "0466e9bf9e6eaffaff9506c448b712068a6fc7598f213383885a78681b4336e2"
+    },
+    {
+      "character": "F",
+      "file": "glyph-F.png",
+      "sha256": "6ee18a6c2304d17425e1ff9d9bba4e6101d5f89875a5370645abb8c8ea64c6d0"
+    },
+    {
+      "character": "G",
+      "file": "glyph-G.png",
+      "sha256": "c11331a1e9da2e6776931155107d1850950a510a92835a77becf8d455e55c32c"
+    },
+    {
+      "character": "H",
+      "file": "glyph-H.png",
+      "sha256": "abd666c3d1ac6026243275f8f44b049056e3e573d91fbdcfdad0b0b35be7d05a"
+    },
+    {
+      "character": "I",
+      "file": "glyph-I.png",
+      "sha256": "f428d1fb9d201c1002ea29847aca0df17a7202ca0e997b625128f9da0d4e5787"
+    },
+    {
+      "character": "J",
+      "file": "glyph-J.png",
+      "sha256": "c0494c98aca2e3e7bc79d3dad8bda77e0fe865420aa58b1989bdda0d14ad4e42"
+    },
+    {
+      "character": "K",
+      "file": "glyph-K.png",
+      "sha256": "8867905cdcfc955b765e8d6b9cc88f63790bb172a5320058aef72ad0cfa41461"
+    },
+    {
+      "character": "L",
+      "file": "glyph-L.png",
+      "sha256": "66d391871fe7357ac011d31dbc4cba78fb8fca4866887c6d4576df1bd5f13eff"
+    },
+    {
+      "character": "M",
+      "file": "glyph-M.png",
+      "sha256": "3d07661d4c74394348d3f6227aa6dab8952e4bd3e1b3c00ecfafd1ebe99f545a"
+    },
+    {
+      "character": "N",
+      "file": "glyph-N.png",
+      "sha256": "44d107dbfb1cfdaf213a0bf781c59cbf8c34cb3622aacd03f068ebb9e0f10acb"
+    },
+    {
+      "character": "O",
+      "file": "glyph-O.png",
+      "sha256": "140eff91347a4b05c7c88c050a5b2b553f5cdd73c5ec8beb78d560af7949f66a"
+    },
+    {
+      "character": "P",
+      "file": "glyph-P.png",
+      "sha256": "92eacbdb0b1ef736b807ec94eaad0deb2eec0b7de4d827d64ac584a55c7ae65f"
+    },
+    {
+      "character": "Q",
+      "file": "glyph-Q.png",
+      "sha256": "2a33458dc37b1238e19587b3319ce0f2e5b921f08a7378d364104cb885ba26b4"
+    },
+    {
+      "character": "R",
+      "file": "glyph-R.png",
+      "sha256": "451d1ffaf21c389c80b75a3a376bd9f6aa6d9f871a37ca2f74b3cb4cd30d022b"
+    },
+    {
+      "character": "S",
+      "file": "glyph-S.png",
+      "sha256": "82f801ba5341e1c097b3fd40c182d962b57d94ff7d1aae77a4e052e37215beb4"
+    },
+    {
+      "character": "T",
+      "file": "glyph-T.png",
+      "sha256": "369d3c1867ada40f7f20c561eb6efefa0aac55dc1e072216a54155756f61273a"
+    },
+    {
+      "character": "U",
+      "file": "glyph-U.png",
+      "sha256": "b7b9c1970214ed5a09ee24e868b10e07476fb45b6875a05af94fb36328717e45"
+    },
+    {
+      "character": "V",
+      "file": "glyph-V.png",
+      "sha256": "6953a48aa554118ee78cd38dfa90cb841667f53e89aad599114bd480fd53f663"
+    },
+    {
+      "character": "W",
+      "file": "glyph-W.png",
+      "sha256": "aafd5355e8616982d5cdbbb7955127c6cbecf60e404355cb81e8f909bef18a60"
+    },
+    {
+      "character": "X",
+      "file": "glyph-X.png",
+      "sha256": "47d97bae80776760ac3f2680c4692ad678e5161ebebabf16fa1f3a1fa72258ef"
+    },
+    {
+      "character": "Y",
+      "file": "glyph-Y.png",
+      "sha256": "5c424737467d042390cfb2640350c33bf282c5dcdf1ab97798be4aa839a3c69a"
+    },
+    {
+      "character": "Z",
+      "file": "glyph-Z.png",
+      "sha256": "3db1043ef178b35e3001abbbef48f907dca5ed998b89ee5035a165f5dc680c0b"
+    }
+  ]
+}

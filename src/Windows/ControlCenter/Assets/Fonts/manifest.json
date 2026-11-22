@@ -1,0 +1,69 @@
+{
+  "source": "https://github.com/adobe-fonts/source-han-sans",
+  "release": "2.005R",
+  "license": "SIL Open Font License 1.1",
+  "modified": false,
+  "fonts": [
+    {
+      "file": "SourceHanSansSC-Heavy.otf",
+      "sha256": "6374b11bc4c2cd4bd7be1a1d64cf5047906c8a6a025c64e023c6792e50ba985e",
+      "bytes": 17614484,
+      "names": {
+        "1": "Source Han Sans SC Heavy",
+        "2": "Regular",
+        "5": "Version 2.005;addfeatures 5.0.0b21",
+        "16": "Source Han Sans SC",
+        "17": "Heavy"
+      }
+    },
+    {
+      "file": "SourceHanSansSC-Medium.otf",
+      "sha256": "1df61d31687d04fd2f928a3bb6ca6cd61f0e988cc267cf317f32406edbb49f70",
+      "bytes": 16546328,
+      "names": {
+        "1": "Source Han Sans SC Medium",
+        "2": "Regular",
+        "5": "Version 2.005;addfeatures 5.0.0b21",
+        "16": "Source Han Sans SC",
+        "17": "Medium"
+      }
+    },
+    {
+      "file": "SairaCondensed-Black.ttf",
+      "source": "https://github.com/google/fonts/tree/main/ofl/sairacondensed",
+      "license": "SIL Open Font License 1.1",
+      "licenseFile": "SairaCondensed-OFL.txt",
+      "modified": false,
+      "sha256": "3edf5f2f027e2d5203218f5b56cda652b2af9258c0c08be7fb874f3f8cf266ae",
+      "bytes": 96880,
+      "family": "Saira Condensed",
+      "weight": "Black"
+    },
+    {
+      "file": "SairaCondensed-Medium.ttf",
+      "source": "https://github.com/google/fonts/tree/main/ofl/sairacondensed",
+      "license": "SIL Open Font License 1.1",
+      "licenseFile": "SairaCondensed-OFL.txt",
+      "modified": false,
+      "sha256": "a02d8fe45b8b7d952cb0dd341683b02ddc1b55dbd0ed89d9d438868be614b66f",
+      "bytes": 96240,
+      "family": "Saira Condensed",
+      "weight": "Medium"
+    },
+    {
+      "file": "Bungee-Regular.ttf",
+      "source": "https://github.com/google/fonts/tree/main/ofl/bungee",
+      "upstream": "https://github.com/djrrb/Bungee",
+      "release": "2.000",
+      "upstreamCommit": "eb03cf69adab5094f6b84e95357789cdf3bfeb99",
+      "license": "SIL Open Font License 1.1",
+      "licenseFile": "Bungee-OFL.txt",
+      "modified": false,
+      "sha256": "c4f5361ce120af3e6b9156d0bf379fa19cda2ea0cd18ac01fd99596c6bf66e3f",
+      "bytes": 118996,
+      "family": "Bungee",
+      "weight": "Regular",
+      "weightClass": 400
+    }
+  ]
+}

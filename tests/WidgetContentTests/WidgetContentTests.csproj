@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF><UseWindowsForms>true</UseWindowsForms><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <AssemblyName>WidgetContentTests</AssemblyName><RuntimeIdentifier>win-x64</RuntimeIdentifier><SelfContained>true</SelfContained>
+  </PropertyGroup>
+  <ItemGroup><ProjectReference Include="../../src/Windows/BaseWidgets/BaseWidgets.csproj" /><ProjectReference Include="../../src/Windows/WidgetHost/WidgetHost.csproj" /></ItemGroup>
+  <Target Name="StageBaseProvider" AfterTargets="Build">
+    <Copy SourceFiles="$(TargetDir)ZZZwallpaper.BaseWidgets.dll" DestinationFolder="$(TargetDir)ExpansionPacks/base" SkipUnchangedFiles="true" />
+  </Target>
+</Project>

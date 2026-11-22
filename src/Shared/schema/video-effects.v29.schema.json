@@ -1,0 +1,2324 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ZZZwallpaper video effects v29",
+  "description": "视频画面效果与粒子参数；按视觉效果顺序处理，空层级使用预设顺序或继承显示器顺序。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "Version",
+    "Intensity",
+    "ScanlineStrength",
+    "ScanlineDensity",
+    "RgbOffset",
+    "SoftRadius",
+    "Brightness",
+    "Contrast",
+    "Saturation",
+    "VignetteStrength",
+    "GlowStrength",
+    "GlowThreshold",
+    "NoiseStrength",
+    "Scanlines",
+    "RgbSplit",
+    "Softening",
+    "Vignette",
+    "Glow",
+    "Noise",
+    "ScanlineSpeed",
+    "GlitchStrength",
+    "GlitchRate",
+    "GlitchCoverage",
+    "DotStrength",
+    "DotSpacing",
+    "DotSize",
+    "DotGlowStrength",
+    "DotSpeed",
+    "DotPulse",
+    "ScanlineMotion",
+    "Glitch",
+    "Dots",
+    "DotGlow",
+    "DotMotion",
+    "GlitchRgbOffset",
+    "DotRippleStrength",
+    "DotRippleSpeed",
+    "DotRippleWidth",
+    "DotRippleCount",
+    "GlitchRgbSplit",
+    "GlitchCluster",
+    "DotRipple",
+    "Layer1",
+    "Layer2",
+    "Layer3",
+    "Layer4",
+    "Layer5",
+    "Layer6",
+    "RippleDotStrength",
+    "RippleDotSpacing",
+    "RippleDotSize",
+    "ClusterBlend",
+    "ClusterSize",
+    "ClusterSmallCount",
+    "ScanBendAmplitude",
+    "ScanBendSpan",
+    "ScanBendDensity",
+    "RippleDotGlow",
+    "ScanlineBends",
+    "BlurRadius",
+    "BlurStrength",
+    "DistortionMode",
+    "DistortionStrength",
+    "DistortionScale",
+    "DistortionSpeed",
+    "DistortionCenterX",
+    "DistortionCenterY",
+    "ScanlineWidth",
+    "ScanlineSoftness",
+    "ScanlineAngle",
+    "Blur",
+    "Distortion",
+    "DistortionMotion",
+    "BlurMotion",
+    "BlurMotionMode",
+    "BlurMotionSpeed",
+    "BlurCoverage",
+    "BlurScale",
+    "BlurFeather",
+    "BlurAngle",
+    "LargeGlitch",
+    "LargeGlitchMode",
+    "LargeGlitchArea",
+    "LargeGlitchStrength",
+    "LargeGlitchRate",
+    "LargeGlitchBlend",
+    "LargeGlitchRgbOffset",
+    "GlitchColorShift",
+    "GlitchHueShift",
+    "LargeGlitchInterval",
+    "LargeGlitchDuration",
+    "LargeGlitchSmallCount",
+    "LargeGlitchSmallStrength",
+    "GlitchRandomHue",
+    "LargeGlitchColorShift",
+    "LargeGlitchHueShift",
+    "LargeGlitchRandomHue",
+    "AudioReactive",
+    "AudioSource",
+    "AudioBand",
+    "AudioSensitivity",
+    "AudioSmoothing",
+    "AudioBeatThreshold",
+    "AudioAmount",
+    "AudioScanlines",
+    "AudioGlitch",
+    "AudioDots",
+    "AudioBlur",
+    "AudioDistortion",
+    "AudioGlow",
+    "AudioNoise"
+  ],
+  "properties": {
+    "Version": {
+      "const": 29
+    },
+    "Intensity": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 1,
+      "description": "fraction"
+    },
+    "ScanlineStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.35,
+      "default": 0.12,
+      "description": "fraction"
+    },
+    "ScanlineDensity": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 260,
+      "default": 170,
+      "description": "cycles per 1080 final output pixels"
+    },
+    "RgbOffset": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 16384,
+      "default": 1.2,
+      "description": "Reference pixels at 1080 output height. UI uses actual screen pixels, limited to 10% of selected screen width. Renderer enforces this limit."
+    },
+    "SoftRadius": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "default": 0.6,
+      "description": "pixels at 1080 output height"
+    },
+    "Brightness": {
+      "type": "number",
+      "minimum": -0.5,
+      "maximum": 0.5,
+      "default": 0,
+      "description": "encoded RGB offset"
+    },
+    "Contrast": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 1.5,
+      "default": 1,
+      "description": "multiplier"
+    },
+    "Saturation": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 2,
+      "default": 1,
+      "description": "multiplier"
+    },
+    "VignetteStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.1,
+      "description": "fraction"
+    },
+    "GlowStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 3,
+      "default": 0.15,
+      "description": "linear-light multiplier"
+    },
+    "GlowThreshold": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.75,
+      "description": "source-encoded level, decoded before extraction"
+    },
+    "NoiseStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.3,
+      "default": 0,
+      "description": "encoded RGB amplitude"
+    },
+    "Scanlines": {
+      "type": "boolean",
+      "default": false
+    },
+    "RgbSplit": {
+      "type": "boolean",
+      "default": false
+    },
+    "Softening": {
+      "type": "boolean",
+      "default": false
+    },
+    "Vignette": {
+      "type": "boolean",
+      "default": false
+    },
+    "Glow": {
+      "type": "boolean",
+      "default": false
+    },
+    "Noise": {
+      "type": "boolean",
+      "default": false
+    },
+    "ScanlineSpeed": {
+      "type": "number",
+      "minimum": -60,
+      "maximum": 60,
+      "default": 0.8,
+      "description": "cycles per second; positive scrolls down"
+    },
+    "GlitchStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.3,
+      "description": "fraction; scales strip displacement and chromatic tearing"
+    },
+    "GlitchRate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 20,
+      "default": 6,
+      "description": "pattern changes per second; zero freezes pattern"
+    },
+    "GlitchCoverage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.2,
+      "description": "fraction of horizontal bands"
+    },
+    "DotStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 1,
+      "description": "blend of original and dot image"
+    },
+    "DotSpacing": {
+      "type": "number",
+      "minimum": 4,
+      "maximum": 40,
+      "default": 12,
+      "description": "pixels at 1080 output height; minimum 2 physical output pixels"
+    },
+    "DotSize": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 1,
+      "default": 0.8,
+      "description": "fraction of dot cell; diameter also responds to source luminance"
+    },
+    "DotGlowStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.4,
+      "description": "local linear-light halo intensity; requires Dots"
+    },
+    "DotSpeed": {
+      "type": "number",
+      "minimum": -2,
+      "maximum": 2,
+      "default": 0.3,
+      "description": "cells per second; positive flows down-right; zero freezes"
+    },
+    "DotPulse": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.35,
+      "description": "radius and glow breathing amount; requires Dots and DotMotion"
+    },
+    "ScanlineMotion": {
+      "type": "boolean",
+      "default": false
+    },
+    "Glitch": {
+      "type": "boolean",
+      "default": false
+    },
+    "Dots": {
+      "type": "boolean",
+      "default": false
+    },
+    "DotGlow": {
+      "type": "boolean",
+      "default": false
+    },
+    "DotMotion": {
+      "type": "boolean",
+      "default": false
+    },
+    "GlitchRgbOffset": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 80,
+      "default": 24,
+      "description": "base glitch RGB separation in pixels at 1080 output height"
+    },
+    "DotRippleStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 2,
+      "default": 1,
+      "description": "linear-light dot halo and core gain"
+    },
+    "DotRippleSpeed": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 4,
+      "default": 0.35,
+      "description": "center-to-corner radii per second; zero freezes rings"
+    },
+    "DotRippleWidth": {
+      "type": "number",
+      "minimum": 0.02,
+      "maximum": 0.5,
+      "default": 0.12,
+      "description": "fraction of center-to-corner radius; effective width capped at .45 / ring count"
+    },
+    "DotRippleCount": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 6,
+      "default": 2,
+      "description": "concentric ring count along center-to-corner radius"
+    },
+    "GlitchRgbSplit": {
+      "type": "boolean",
+      "default": true
+    },
+    "GlitchCluster": {
+      "type": "boolean",
+      "default": false
+    },
+    "DotRipple": {
+      "type": "boolean",
+      "default": false
+    },
+    "Layer1": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 0,
+        "Strength": 0.35,
+        "Rate": 3,
+        "Coverage": 0.8,
+        "Size": 14,
+        "RgbOffset": 14
+      }
+    },
+    "Layer2": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 1,
+        "Strength": 0.22,
+        "Rate": 5,
+        "Coverage": 0.8,
+        "Size": 6,
+        "RgbOffset": 8
+      }
+    },
+    "Layer3": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 2,
+        "Strength": 0.16,
+        "Rate": 11,
+        "Coverage": 0.6,
+        "Size": 3,
+        "RgbOffset": 5
+      }
+    },
+    "Layer4": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 3,
+        "Strength": 0.25,
+        "Rate": 2,
+        "Coverage": 0.75,
+        "Size": 10,
+        "RgbOffset": 12
+      }
+    },
+    "Layer5": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 1,
+        "Strength": 0.18,
+        "Rate": 7,
+        "Coverage": 0.65,
+        "Size": 8,
+        "RgbOffset": 7
+      }
+    },
+    "Layer6": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 0,
+        "Strength": 0.2,
+        "Rate": 9,
+        "Coverage": 0.7,
+        "Size": 5,
+        "RgbOffset": 8
+      }
+    },
+    "RippleDotStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.85
+    },
+    "RippleDotSpacing": {
+      "type": "number",
+      "minimum": 4,
+      "maximum": 40,
+      "default": 12
+    },
+    "RippleDotSize": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 1,
+      "default": 0.8
+    },
+    "ClusterBlend": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.35
+    },
+    "ClusterSize": {
+      "type": "number",
+      "minimum": 0.08,
+      "maximum": 0.4,
+      "default": 0.24
+    },
+    "ClusterSmallCount": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "default": 3
+    },
+    "ScanBendAmplitude": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 80,
+      "default": 16
+    },
+    "ScanBendSpan": {
+      "type": "number",
+      "minimum": 40,
+      "maximum": 800,
+      "default": 240
+    },
+    "ScanBendDensity": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.4
+    },
+    "RippleDotGlow": {
+      "type": "boolean",
+      "default": true
+    },
+    "ScanlineBends": {
+      "type": "boolean",
+      "default": false
+    },
+    "BlurRadius": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 32,
+      "default": 8
+    },
+    "BlurStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 1
+    },
+    "DistortionMode": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2,
+      "default": 0
+    },
+    "DistortionStrength": {
+      "type": "number",
+      "minimum": -1,
+      "maximum": 1,
+      "default": 0.2
+    },
+    "DistortionScale": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 20,
+      "default": 4
+    },
+    "DistortionSpeed": {
+      "type": "number",
+      "minimum": -4,
+      "maximum": 4,
+      "default": 0.25
+    },
+    "DistortionCenterX": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.5
+    },
+    "DistortionCenterY": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.5
+    },
+    "ScanlineWidth": {
+      "type": "number",
+      "minimum": 0.25,
+      "maximum": 12,
+      "default": 3.18
+    },
+    "ScanlineSoftness": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.6
+    },
+    "ScanlineAngle": {
+      "type": "number",
+      "minimum": -90,
+      "maximum": 90,
+      "default": 0
+    },
+    "Blur": {
+      "type": "boolean",
+      "default": false
+    },
+    "Distortion": {
+      "type": "boolean",
+      "default": false
+    },
+    "DistortionMotion": {
+      "type": "boolean",
+      "default": false
+    },
+    "BlurMotion": {
+      "type": "boolean",
+      "default": false,
+      "deprecated": true
+    },
+    "BlurMotionMode": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2,
+      "default": 0,
+      "deprecated": true
+    },
+    "BlurMotionSpeed": {
+      "type": "number",
+      "minimum": -2,
+      "maximum": 2,
+      "default": 0.08,
+      "deprecated": true
+    },
+    "BlurCoverage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.45,
+      "deprecated": true
+    },
+    "BlurScale": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 8,
+      "default": 2,
+      "deprecated": true
+    },
+    "BlurFeather": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.45,
+      "deprecated": true
+    },
+    "BlurAngle": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180,
+      "default": 25,
+      "deprecated": true
+    },
+    "LargeGlitch": {
+      "type": "boolean",
+      "default": false
+    },
+    "LargeGlitchMode": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "default": 3,
+      "description": "0 horizontal, 1 vertical, 2 block, 3 automatic shape with perimeter/corner/center placement."
+    },
+    "LargeGlitchArea": {
+      "type": "number",
+      "minimum": 0.2,
+      "maximum": 0.6,
+      "default": 0.35
+    },
+    "LargeGlitchStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.45
+    },
+    "LargeGlitchRate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 20,
+      "default": 12,
+      "description": "Internal changes per second during a burst; zero freezes each burst pattern, not the burst schedule."
+    },
+    "LargeGlitchBlend": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.7
+    },
+    "LargeGlitchRgbOffset": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 80,
+      "default": 28
+    },
+    "GlitchColorShift": {
+      "type": "boolean",
+      "default": false,
+      "description": "Color shift for companion patches, digital glitch and legacy localized cluster only."
+    },
+    "GlitchHueShift": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180,
+      "default": 45,
+      "description": "Fixed small/digital/cluster HSV hue rotation in degrees; unused while GlitchRandomHue is enabled."
+    },
+    "LargeGlitchInterval": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 20,
+      "default": 4,
+      "description": "Seconds between burst starts, following continuous video time."
+    },
+    "LargeGlitchDuration": {
+      "type": "number",
+      "minimum": 0.05,
+      "maximum": 0.9,
+      "default": 0.25,
+      "description": "Seconds per burst; always shorter than the minimum interval."
+    },
+    "LargeGlitchSmallCount": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10,
+      "default": 6
+    },
+    "LargeGlitchSmallStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.55
+    },
+    "GlitchRandomHue": {
+      "type": "boolean",
+      "default": false,
+      "description": "Random small-glitch hues; companions keep independent hues for the whole burst, digital/cluster colors follow each event."
+    },
+    "LargeGlitchColorShift": {
+      "type": "boolean",
+      "default": false
+    },
+    "LargeGlitchHueShift": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180,
+      "default": 45,
+      "description": "Fixed main-region hue rotation in degrees; unused while LargeGlitchRandomHue is enabled."
+    },
+    "LargeGlitchRandomHue": {
+      "type": "boolean",
+      "default": false,
+      "description": "A new main-region hue per burst, stable within that burst."
+    },
+    "AudioReactive": {
+      "type": "boolean",
+      "default": false
+    },
+    "AudioBand": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "default": 0
+    },
+    "AudioSensitivity": {
+      "type": "number",
+      "minimum": 0.25,
+      "maximum": 5,
+      "default": 1.5
+    },
+    "AudioSmoothing": {
+      "type": "number",
+      "minimum": 0.02,
+      "maximum": 2,
+      "default": 0.18
+    },
+    "AudioBeatThreshold": {
+      "type": "number",
+      "minimum": 0.05,
+      "maximum": 0.95,
+      "default": 0.35
+    },
+    "AudioAmount": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.75
+    },
+    "AudioScanlines": {
+      "type": "boolean",
+      "default": true
+    },
+    "AudioGlitch": {
+      "type": "boolean",
+      "default": true
+    },
+    "AudioDots": {
+      "type": "boolean",
+      "default": true
+    },
+    "AudioBlur": {
+      "type": "boolean",
+      "default": true
+    },
+    "AudioDistortion": {
+      "type": "boolean",
+      "default": true
+    },
+    "AudioGlow": {
+      "type": "boolean",
+      "default": true
+    },
+    "AudioNoise": {
+      "type": "boolean",
+      "default": false
+    },
+    "AudioSource": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0
+    },
+    "Collection": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "Added"
+          ],
+          "properties": {
+            "Added": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 4194303
+            },
+            "ColorEnabled": {
+              "type": "boolean",
+              "default": true
+            },
+            "Color": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "RgbSplit": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "Softening": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "Glow": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "Vignette": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "Noise": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "Scanlines": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "Glitch": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "LargeGlitch": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "Dots": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "DotRipple": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "Blur": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "Distortion": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "AudioReactive": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "HideTaskbarEnabled": {
+              "type": "boolean"
+            },
+            "ReleaseTaskbarSpace": {
+              "type": "boolean",
+              "default": false
+            },
+            "HideTaskbar": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "ZoomTunnel": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "WaterWave": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "EdgeOutline": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "Pixelate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "SunPrism": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "Particles": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "Layers": {
+              "description": "All profiles render as a sequential stack. Null uses the central default order for a display, or inherits display ordering for an asset. Missing stages inherit their display or default layer. Larger values execute later; ties use the central default order.",
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "maxProperties": 19,
+                  "propertyNames": {
+                    "enum": [
+                      "WaterWave",
+                      "Pixelate",
+                      "ZoomTunnel",
+                      "Blur",
+                      "Distortion",
+                      "Softening",
+                      "Color",
+                      "RgbSplit",
+                      "Glitch",
+                      "LargeGlitch",
+                      "Dots",
+                      "DotRipple",
+                      "Glow",
+                      "Vignette",
+                      "Scanlines",
+                      "Noise",
+                      "EdgeOutline",
+                      "SunPrism",
+                      "Particles"
+                    ]
+                  },
+                  "additionalProperties": {
+                    "type": "integer",
+                    "minimum": -999,
+                    "maximum": 999
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "AudioZoom": {
+      "type": "boolean"
+    },
+    "AudioZoomAmount": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.5
+    },
+    "LargeGlitchRandomize": {
+      "type": "boolean",
+      "default": false
+    },
+    "LargeGlitchVariation": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.2,
+      "description": "Per-burst relative +/- variation; zero retains configured values."
+    },
+    "DotShape": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 7,
+      "default": 0,
+      "description": "Circle, square, diamond, triangle, hexagon, star, cross, ring."
+    },
+    "RippleDotShape": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 7,
+      "default": 0,
+      "description": "Circle, square, diamond, triangle, hexagon, star, cross, ring."
+    },
+    "DotRotation": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 360,
+      "default": 0
+    },
+    "RippleDotRotation": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 360,
+      "default": 0
+    },
+    "ZoomTunnel": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Enabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "Strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 1
+        },
+        "Period": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 20,
+          "default": 4
+        },
+        "Zoom": {
+          "type": "number",
+          "minimum": 1.1,
+          "maximum": 8,
+          "default": 4
+        },
+        "CenterX": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.5
+        },
+        "CenterY": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.5
+        }
+      },
+      "description": "画面循环向前放大并淡出，下一层从远处放大接入，形成连续穿梭。可调整周期、放大倍率与消失点。"
+    },
+    "RainRipples": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Enabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "Strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.7
+        },
+        "Density": {
+          "type": "number",
+          "minimum": 2,
+          "maximum": 10,
+          "default": 5
+        },
+        "Speed": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 3,
+          "default": 0.6
+        },
+        "Radius": {
+          "type": "number",
+          "minimum": 0.2,
+          "maximum": 1,
+          "default": 0.8
+        },
+        "Width": {
+          "type": "number",
+          "minimum": 0.04,
+          "maximum": 0.3,
+          "default": 0.12
+        },
+        "Outline": {
+          "type": "boolean",
+          "default": true
+        },
+        "OutlineStrength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.65
+        },
+        "OutlineWidth": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 10,
+          "default": 2
+        },
+        "Color": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "default": "#FFFFFF"
+        }
+      },
+      "description": "粒子类型为 5 时使用的雨滴涟漪参数，保留旧版配置。"
+    },
+    "WaterWave": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Enabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "Strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.7
+        },
+        "Amplitude": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 40,
+          "default": 12
+        },
+        "Frequency": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 30,
+          "default": 5
+        },
+        "Speed": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 3,
+          "default": 0.3
+        },
+        "Angle": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180,
+          "default": 25
+        }
+      },
+      "description": "叠加连续流动的两组水波，让画面像透过水面观察时一样轻微摇曳。振幅按 1080p 基准像素计算。"
+    },
+    "EdgeOutline": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Enabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "Strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 1
+        },
+        "Width": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 4,
+          "default": 1.2
+        },
+        "Threshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.15
+        },
+        "Mode": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2,
+          "default": 0
+        },
+        "Color": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^#[0-9A-Fa-f]{6}$",
+          "default": null,
+          "description": "描边颜色；null 沿用旧模式的黑色或白色。"
+        }
+      },
+      "description": "检测原始画面的明暗边界并绘制轮廓。可选白色叠加、黑色叠加或黑底白线；阈值越高，保留的轮廓越少。"
+    },
+    "Pixelate": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Enabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "Strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 1
+        },
+        "BlockSize": {
+          "type": "number",
+          "minimum": 2,
+          "maximum": 128,
+          "default": 16
+        }
+      },
+      "description": "将画面合并为规则的方形色块，色块越大，细节越少。尺寸按 1080p 基准像素计算。"
+    },
+    "SunPrism": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Enabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "Strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.45
+        },
+        "Angle": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180,
+          "default": -35
+        },
+        "Width": {
+          "type": "number",
+          "minimum": 0.05,
+          "maximum": 1,
+          "default": 0.3
+        },
+        "Position": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "default": 0.2
+        },
+        "Speed": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.03
+        },
+        "Shape": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5,
+          "default": 0
+        },
+        "Curvature": {
+          "type": "number",
+          "minimum": -2,
+          "maximum": 2,
+          "default": 0
+        },
+        "Arc": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 360,
+          "default": 180
+        },
+        "Radius": {
+          "type": "number",
+          "minimum": 0.05,
+          "maximum": 1.5,
+          "default": 0.4
+        },
+        "Repeat": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 12,
+          "default": 1
+        },
+        "Colors": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 12,
+          "items": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$",
+            "default": "#FFFFFF"
+          }
+        },
+        "CenterX": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.5
+        },
+        "CenterY": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.5
+        },
+        "MoveX": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0
+        },
+        "MoveY": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0
+        },
+        "MoveSpeedX": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2,
+          "default": 0.05
+        },
+        "MoveSpeedY": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2,
+          "default": 0.05
+        },
+        "MovePhase": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180,
+          "default": 90
+        },
+        "RotationSpeed": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180,
+          "default": 0
+        },
+        "ConeAngle": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 170,
+          "default": 45
+        },
+        "ColorPositions": {
+          "type": "array",
+          "maxItems": 12,
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "default": [],
+          "description": "空数组按颜色数量均匀分布；非空时必须与 Colors 等长且严格递增。"
+        },
+        "ConeCorner": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3,
+          "default": 0,
+          "description": "0 左上、1 右上、2 左下、3 右下"
+        },
+        "ConeDirection": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 90,
+          "default": 45,
+          "description": "0° 沿水平内向，90° 沿垂直内向；45° 指向对角。"
+        },
+        "ConeLength": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 2,
+          "default": 1,
+          "description": "照射长度相对画面对角线的比例"
+        },
+        "ConeSwing": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 45,
+          "default": 8
+        }
+      },
+      "description": "阳光色散支持六种形状、中心与移动旋转动画，以及 2–12 个带位置的渐变关键点。"
+    },
+    "ColoredNoise": {
+      "type": "boolean",
+      "default": false
+    },
+    "BlurMethod": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4,
+      "default": 0
+    },
+    "BlurDirection": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180,
+      "default": 0
+    },
+    "BlurCenterX": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.5
+    },
+    "BlurCenterY": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.5
+    },
+    "RippleColor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Mode": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3,
+          "default": 0
+        },
+        "Color": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "default": "#FFFFFF"
+        },
+        "HueMin": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360,
+          "default": 0
+        },
+        "HueMax": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360,
+          "default": 360
+        },
+        "SaturationMin": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.7
+        },
+        "SaturationMax": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 1
+        },
+        "ValueMin": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.7
+        },
+        "ValueMax": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 1
+        },
+        "Rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10,
+          "default": 1
+        }
+      }
+    },
+    "Masks": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "Id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64,
+            "pattern": "^[a-zA-Z0-9-]+$"
+          },
+          "Name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "Shape": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 8,
+            "default": 0
+          },
+          "X": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "default": 0.5
+          },
+          "Y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "default": 0.5
+          },
+          "Width": {
+            "type": "number",
+            "minimum": 0.01,
+            "maximum": 2,
+            "default": 0.6
+          },
+          "Height": {
+            "type": "number",
+            "minimum": 0.01,
+            "maximum": 2,
+            "default": 0.6
+          },
+          "Rotation": {
+            "type": "number",
+            "minimum": -180,
+            "maximum": 180,
+            "default": 0
+          },
+          "Feather": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "default": 0.05
+          },
+          "Corner": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "default": 0.2
+          },
+          "Invert": {
+            "type": "boolean",
+            "default": false
+          },
+          "Speed": {
+            "type": "number",
+            "minimum": -2,
+            "maximum": 2,
+            "default": 0
+          },
+          "Coverage": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "default": 0.45
+          },
+          "Scale": {
+            "type": "number",
+            "minimum": 0.5,
+            "maximum": 8,
+            "default": 2
+          },
+          "Image": {
+            "type": "string",
+            "maxLength": 351000,
+            "default": "",
+            "description": "Empty, or B1: followed by Base64 Brotli data that expands to exactly 512 x 512 luminance bytes. Legacy raw Base64 is also accepted."
+          }
+        },
+        "required": [
+          "Id",
+          "Name"
+        ]
+      },
+      "default": []
+    },
+    "EffectMasks": {
+      "type": "object",
+      "maxProperties": 19,
+      "propertyNames": {
+        "enum": [
+          "Color",
+          "RgbSplit",
+          "Softening",
+          "Glow",
+          "Vignette",
+          "Noise",
+          "Scanlines",
+          "Glitch",
+          "LargeGlitch",
+          "Dots",
+          "DotRipple",
+          "Blur",
+          "Distortion",
+          "ZoomTunnel",
+          "Particles",
+          "WaterWave",
+          "EdgeOutline",
+          "Pixelate",
+          "SunPrism"
+        ]
+      },
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 64
+      },
+      "default": {}
+    },
+    "AudioRules": {
+      "type": "array",
+      "maxItems": 128,
+      "items": {
+        "type": "object",
+        "properties": {
+          "Parameter": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64,
+            "enum": [
+              "Brightness",
+              "Contrast",
+              "Saturation",
+              "RgbOffset",
+              "SoftRadius",
+              "GlowStrength",
+              "VignetteStrength",
+              "NoiseStrength",
+              "ScanlineStrength",
+              "GlitchStrength",
+              "ClusterBlend",
+              "LargeGlitchBlend",
+              "DotStrength",
+              "RippleDotStrength",
+              "BlurStrength",
+              "DistortionStrength",
+              "GlowThreshold",
+              "ScanlineDensity",
+              "ScanlineWidth",
+              "ScanlineSoftness",
+              "ScanlineAngle",
+              "ScanlineSpeed",
+              "ScanBendAmplitude",
+              "ScanBendSpan",
+              "GlitchCoverage",
+              "GlitchRgbOffset",
+              "GlitchHueShift",
+              "ClusterSize",
+              "LargeGlitchStrength",
+              "LargeGlitchArea",
+              "LargeGlitchRgbOffset",
+              "LargeGlitchHueShift",
+              "DotSpacing",
+              "DotSize",
+              "DotRotation",
+              "RippleDotSpacing",
+              "RippleDotSize",
+              "RippleDotRotation",
+              "DotGlowStrength",
+              "DotSpeed",
+              "DotRippleStrength",
+              "DotRippleWidth",
+              "DotRippleSpeed",
+              "BlurRadius",
+              "BlurDirection",
+              "DistortionScale",
+              "DistortionSpeed",
+              "DistortionCenterX",
+              "DistortionCenterY",
+              "ZoomTunnel.Strength",
+              "ZoomTunnel.Zoom",
+              "ZoomTunnel.CenterX",
+              "ZoomTunnel.CenterY",
+              "RainRipples.Strength",
+              "RainRipples.Density",
+              "RainRipples.Radius",
+              "RainRipples.Width",
+              "RainRipples.Speed",
+              "WaterWave.Strength",
+              "WaterWave.Amplitude",
+              "WaterWave.Frequency",
+              "WaterWave.Angle",
+              "WaterWave.Speed",
+              "EdgeOutline.Strength",
+              "EdgeOutline.Width",
+              "EdgeOutline.Threshold",
+              "Pixelate.Strength",
+              "Pixelate.BlockSize",
+              "SunPrism.Strength",
+              "SunPrism.Angle",
+              "SunPrism.Width",
+              "SunPrism.Position",
+              "SunPrism.Speed",
+              "AudioZoomAmount"
+            ]
+          },
+          "Enabled": {
+            "type": "boolean"
+          },
+          "Band": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          },
+          "Response": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "Weak": {
+            "type": "number",
+            "minimum": -180,
+            "maximum": 16384
+          },
+          "Strong": {
+            "type": "number",
+            "minimum": -180,
+            "maximum": 16384
+          },
+          "Sensitivity": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0.25,
+            "maximum": 5
+          },
+          "Attack": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0.005,
+            "maximum": 1
+          },
+          "Release": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0.02,
+            "maximum": 2
+          },
+          "Threshold": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0.05,
+            "maximum": 0.95
+          }
+        },
+        "required": [
+          "Parameter",
+          "Enabled",
+          "Band",
+          "Response",
+          "Weak",
+          "Strong"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "AudioLegacy": {
+      "type": "boolean"
+    },
+    "AudioAttack": {
+      "type": "number",
+      "minimum": 0.005,
+      "maximum": 1
+    },
+    "Particles": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Enabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "Style": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 14,
+          "default": 0,
+          "description": "0 circle, 1 petal, 2 glow, 3 soft dot, 4 diamond, 5 rain ripples, 6 star, 7 custom image, 8 Polychrome, 9 Master Tape, 10 Encrypted Master Tape, 11 Denny, 12 Gear Coin, 13 Boopon, 14 Ochre Shard (赭石碎片). Built-in images are 200x200 transparent PNG artwork."
+        },
+        "Count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2000,
+          "default": 120
+        },
+        "Size": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 256,
+          "default": 5
+        },
+        "Speed": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 600,
+          "default": 35
+        },
+        "Direction": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360,
+          "default": 90,
+          "description": "Emission angle: 0 right, 90 down, 180 left, 270 up."
+        },
+        "Opacity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.8
+        },
+        "Color": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "default": "#FFFFFF"
+        },
+        "Sway": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.5
+        },
+        "Rotation": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180,
+          "default": 20
+        },
+        "RandomRotation": {
+          "type": "boolean",
+          "default": true,
+          "description": "Independent clockwise/counterclockwise rotation and 35-100% of the configured speed per particle birth. Initial angle is independent of position in both modes; zero Rotation remains still."
+        },
+        "Twinkle": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.25
+        },
+        "Fade": {
+          "type": "boolean",
+          "default": true
+        },
+        "Quality": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2,
+          "default": 1,
+          "description": "0 low (128 particles), 1 medium (512), 2 high (2000); Count is capped by quality."
+        },
+        "LocalRegion": {
+          "type": "boolean",
+          "default": false,
+          "description": "Restrict area emitter origins to CenterX/Y and Width/Height; point and line emitters always use their coordinates. Particles may travel outside the origin area."
+        },
+        "CenterX": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.5
+        },
+        "CenterY": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.5
+        },
+        "Width": {
+          "type": "number",
+          "minimum": 0.05,
+          "maximum": 1,
+          "default": 1
+        },
+        "Height": {
+          "type": "number",
+          "minimum": 0.05,
+          "maximum": 1,
+          "default": 1
+        },
+        "Emitter": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2,
+          "default": 0,
+          "description": "0 area, 1 point, 2 horizontal line."
+        },
+        "Emission": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0,
+          "description": "0 continuous staggered births, 1 simultaneous repeating burst."
+        },
+        "Lifetime": {
+          "type": "number",
+          "minimum": 0.2,
+          "maximum": 60,
+          "default": 8,
+          "description": "Lifetime in seconds."
+        },
+        "BurstInterval": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 60,
+          "default": 2,
+          "description": "Idle seconds after each burst lifetime; burst cycle = Lifetime + BurstInterval."
+        },
+        "Spread": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360,
+          "default": 30,
+          "description": "Angular spread in degrees around Direction."
+        },
+        "Gravity": {
+          "type": "number",
+          "minimum": -300,
+          "maximum": 300,
+          "default": 0,
+          "description": "Vertical acceleration in pixels/s² at 1080p; positive down."
+        },
+        "SizeRandom": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.3,
+          "description": "Random reduction from Size."
+        },
+        "SpeedRandom": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.2,
+          "description": "Random reduction from Speed."
+        },
+        "Image": {
+          "type": "string",
+          "default": "",
+          "maxLength": 1400000,
+          "description": "Empty or P1: plus base64 Brotli compressed 512x512 RGBA8 straight-alpha bytes, exactly 1048576 bytes after decompression; preserve aspect ratio with transparent padding. Uploaded locally through the UI. No external file path."
+        },
+        "ImageName": {
+          "type": "string",
+          "default": "",
+          "maxLength": 128
+        },
+        "RandomAppearance": {
+          "type": "boolean",
+          "default": false,
+          "description": "Choose an appearance from RandomStyles at each particle birth; stable during its lifetime. Style is retained but ignored while random selection is enabled."
+        },
+        "RandomStyles": {
+          "default": [
+            0,
+            6
+          ],
+          "items": {
+            "type": "integer",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ]
+          },
+          "type": "array",
+          "minItems": 0,
+          "uniqueItems": true,
+          "maxItems": 14,
+          "description": "Appearance IDs. RandomAppearance requires at least one selection. ID 7 requires a valid uploaded Image. Rain ripples cannot be mixed."
+        },
+        "SubLayer": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "Enabled": {
+              "type": "boolean",
+              "default": false
+            },
+            "Style": {
+              "type": "integer",
+              "default": 0,
+              "description": "0 circle, 1 petal, 2 glow, 3 soft dot, 4 diamond, 5 rain ripples, 6 star, 7 custom image, 8 Polychrome, 9 Master Tape, 10 Encrypted Master Tape, 11 Denny, 12 Gear Coin, 13 Boopon, 14 Ochre Shard (赭石碎片). Built-in images are 200x200 transparent PNG artwork.",
+              "enum": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
+            },
+            "Count": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 2000,
+              "default": 60
+            },
+            "Size": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 256,
+              "default": 5
+            },
+            "Speed": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 600,
+              "default": 35
+            },
+            "Direction": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 360,
+              "default": 90,
+              "description": "Emission angle: 0 right, 90 down, 180 left, 270 up."
+            },
+            "Opacity": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.8
+            },
+            "Color": {
+              "type": "string",
+              "pattern": "^#[0-9a-fA-F]{6}$",
+              "default": "#FFFFFF"
+            },
+            "Sway": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.5
+            },
+            "Rotation": {
+              "type": "number",
+              "minimum": -180,
+              "maximum": 180,
+              "default": 20
+            },
+            "RandomRotation": {
+              "type": "boolean",
+              "default": true,
+              "description": "Independent clockwise/counterclockwise rotation and 35-100% of the configured speed per particle birth. Initial angle is independent of position in both modes; zero Rotation remains still."
+            },
+            "Twinkle": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.25
+            },
+            "Fade": {
+              "type": "boolean",
+              "default": true
+            },
+            "Quality": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2,
+              "default": 1,
+              "description": "0 low (128 particles), 1 medium (512), 2 high (2000); Count is capped by quality."
+            },
+            "LocalRegion": {
+              "type": "boolean",
+              "default": false,
+              "description": "Restrict area emitter origins to CenterX/Y and Width/Height; point and line emitters always use their coordinates. Particles may travel outside the origin area."
+            },
+            "CenterX": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.5
+            },
+            "CenterY": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.5
+            },
+            "Width": {
+              "type": "number",
+              "minimum": 0.05,
+              "maximum": 1,
+              "default": 1
+            },
+            "Height": {
+              "type": "number",
+              "minimum": 0.05,
+              "maximum": 1,
+              "default": 1
+            },
+            "Emitter": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2,
+              "default": 0,
+              "description": "0 area, 1 point, 2 horizontal line."
+            },
+            "Emission": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0,
+              "description": "0 continuous staggered births, 1 simultaneous repeating burst."
+            },
+            "Lifetime": {
+              "type": "number",
+              "minimum": 0.2,
+              "maximum": 60,
+              "default": 8,
+              "description": "Lifetime in seconds."
+            },
+            "BurstInterval": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 60,
+              "default": 2,
+              "description": "Idle seconds after each burst lifetime; burst cycle = Lifetime + BurstInterval."
+            },
+            "Spread": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 360,
+              "default": 30,
+              "description": "Angular spread in degrees around Direction."
+            },
+            "Gravity": {
+              "type": "number",
+              "minimum": -300,
+              "maximum": 300,
+              "default": 0,
+              "description": "Vertical acceleration in pixels/s² at 1080p; positive down."
+            },
+            "SizeRandom": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.3,
+              "description": "Random reduction from Size."
+            },
+            "SpeedRandom": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.2,
+              "description": "Random reduction from Speed."
+            },
+            "Image": {
+              "type": "string",
+              "default": "",
+              "maxLength": 1400000,
+              "description": "Empty or P1: plus base64 Brotli compressed 512x512 RGBA8 straight-alpha bytes, exactly 1048576 bytes after decompression; preserve aspect ratio with transparent padding. Uploaded locally through the UI. No external file path."
+            },
+            "ImageName": {
+              "type": "string",
+              "default": "",
+              "maxLength": 128
+            },
+            "RandomAppearance": {
+              "type": "boolean",
+              "default": false,
+              "description": "Choose an appearance from RandomStyles at each particle birth; stable during its lifetime. Style is retained but ignored while random selection is enabled."
+            },
+            "RandomStyles": {
+              "default": [
+                0,
+                6
+              ],
+              "items": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14
+                ]
+              },
+              "type": "array",
+              "minItems": 0,
+              "uniqueItems": true,
+              "maxItems": 14,
+              "description": "Appearance IDs. RandomAppearance requires at least one selection. ID 7 requires a valid uploaded Image. Rain ripples cannot be mixed."
+            },
+            "ColorEnabled": {
+              "type": "boolean",
+              "default": false,
+              "description": "启用粒子颜色染色；关闭时保留图片原色，Color 仍保存"
+            }
+          },
+          "description": "Independent second particle layer, never emitted by primary particles. Own appearance, emitter, movement and per-layer quality cap; composited after the primary layer under the same effect mask and strength. Disabled by default. No recursive layers."
+        },
+        "ColorEnabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "启用粒子颜色染色；关闭时保留图片原色，Color 仍保存"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "GlitchLayer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Enabled",
+        "Mode",
+        "Strength",
+        "Rate",
+        "Coverage",
+        "Size",
+        "RgbOffset"
+      ],
+      "properties": {
+        "Enabled": {
+          "type": "boolean"
+        },
+        "Mode": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3,
+          "description": "0 horizontal tearing; 1 displaced blocks; 2 thin jitter strips; 3 RGB ghosting"
+        },
+        "Strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "Rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 40,
+          "description": "pattern changes per second"
+        },
+        "Coverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "Size": {
+          "type": "number",
+          "minimum": 2,
+          "maximum": 240,
+          "description": "pixels at 1080 output height"
+        },
+        "RgbOffset": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 80,
+          "description": "pixels at 1080 output height"
+        }
+      }
+    }
+  },
+  "$id": "video-effects.v24.schema.json"
+}

@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ZZZwallpaper video effects v2",
+  "description": "New media defaults to original. Inactive effect values are retained. v1 data must be migrated before validating. Only video pixels are processed.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "Version",
+    "Intensity",
+    "ScanlineStrength",
+    "ScanlineDensity",
+    "RgbOffset",
+    "SoftRadius",
+    "Brightness",
+    "Contrast",
+    "Saturation",
+    "VignetteStrength",
+    "GlowStrength",
+    "GlowThreshold",
+    "NoiseStrength",
+    "Scanlines",
+    "RgbSplit",
+    "Softening",
+    "Vignette",
+    "Glow",
+    "Noise"
+  ],
+  "properties": {
+    "Version": {
+      "type": "integer",
+      "const": 2,
+      "default": 2
+    },
+    "Intensity": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 1,
+      "description": "fraction"
+    },
+    "ScanlineStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.35,
+      "default": 0.12,
+      "description": "fraction"
+    },
+    "ScanlineDensity": {
+      "type": "number",
+      "minimum": 80,
+      "maximum": 260,
+      "default": 170,
+      "description": "cycles per 1080 final output pixels"
+    },
+    "RgbOffset": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 3,
+      "default": 1.2,
+      "description": "pixels at 1080 output height"
+    },
+    "SoftRadius": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 2,
+      "default": 0.6,
+      "description": "pixels at 1080 output height"
+    },
+    "Brightness": {
+      "type": "number",
+      "minimum": -0.5,
+      "maximum": 0.5,
+      "default": 0,
+      "description": "encoded RGB offset"
+    },
+    "Contrast": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 1.5,
+      "default": 1,
+      "description": "multiplier"
+    },
+    "Saturation": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 2,
+      "default": 1,
+      "description": "multiplier"
+    },
+    "VignetteStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.1,
+      "description": "fraction"
+    },
+    "GlowStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.5,
+      "default": 0.15,
+      "description": "linear-light multiplier"
+    },
+    "GlowThreshold": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.75,
+      "description": "source-encoded level, decoded before extraction"
+    },
+    "NoiseStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.02,
+      "default": 0,
+      "description": "encoded RGB amplitude"
+    },
+    "Scanlines": {
+      "type": "boolean",
+      "default": false
+    },
+    "RgbSplit": {
+      "type": "boolean",
+      "default": false
+    },
+    "Softening": {
+      "type": "boolean",
+      "default": false
+    },
+    "Vignette": {
+      "type": "boolean",
+      "default": false
+    },
+    "Glow": {
+      "type": "boolean",
+      "default": false
+    },
+    "Noise": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,338 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- 24 x 24 filled vector prototypes. Consumers must deep-clone every PathGeometry/PathFigure/segment before assigning Data; these resources are never shared as live visual geometry. No ArcSegment or font glyph is used. -->
+  <PathGeometry x:Key="EffectsIconColor" FillRule="EvenOdd">
+    <PathGeometry.Figures>
+      <PathFigure StartPoint="12,2" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="6,2" Point2="2,6" Point3="2,12" />
+          <BezierSegment Point1="2,18" Point2="6,22" Point3="12,22" />
+          <LineSegment Point="15,22" />
+          <BezierSegment Point1="17,22" Point2="18,20" Point3="17,18" />
+          <BezierSegment Point1="16,16" Point2="16,15" Point3="19,15" />
+          <BezierSegment Point1="22,15" Point2="23,13" Point3="22,10" />
+          <BezierSegment Point1="21,5" Point2="17,2" Point3="12,2" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="8.65,8.5" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="8.65,9.41127" Point2="7.91127,10.15" Point3="7,10.15" />
+          <BezierSegment Point1="6.08873,10.15" Point2="5.35,9.41127" Point3="5.35,8.5" />
+          <BezierSegment Point1="5.35,7.58873" Point2="6.08873,6.85" Point3="7,6.85" />
+          <BezierSegment Point1="7.91127,6.85" Point2="8.65,7.58873" Point3="8.65,8.5" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="13.65,6" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="13.65,6.91127" Point2="12.9113,7.65" Point3="12,7.65" />
+          <BezierSegment Point1="11.0887,7.65" Point2="10.35,6.91127" Point3="10.35,6" />
+          <BezierSegment Point1="10.35,5.08873" Point2="11.0887,4.35" Point3="12,4.35" />
+          <BezierSegment Point1="12.9113,4.35" Point2="13.65,5.08873" Point3="13.65,6" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="18.65,8" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="18.65,8.91127" Point2="17.9113,9.65" Point3="17,9.65" />
+          <BezierSegment Point1="16.0887,9.65" Point2="15.35,8.91127" Point3="15.35,8" />
+          <BezierSegment Point1="15.35,7.08873" Point2="16.0887,6.35" Point3="17,6.35" />
+          <BezierSegment Point1="17.9113,6.35" Point2="18.65,7.08873" Point3="18.65,8" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="8.15,14.5" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="8.15,15.4113" Point2="7.41127,16.15" Point3="6.5,16.15" />
+          <BezierSegment Point1="5.58873,16.15" Point2="4.85,15.4113" Point3="4.85,14.5" />
+          <BezierSegment Point1="4.85,13.5887" Point2="5.58873,12.85" Point3="6.5,12.85" />
+          <BezierSegment Point1="7.41127,12.85" Point2="8.15,13.5887" Point3="8.15,14.5" />
+        </PathFigure.Segments>
+      </PathFigure>
+    </PathGeometry.Figures>
+  </PathGeometry>
+  <PathGeometry x:Key="EffectsIconScan" FillRule="EvenOdd">
+    <PathGeometry.Figures>
+      <PathFigure StartPoint="2,2.5" IsClosed="True">
+        <PathFigure.Segments>
+          <LineSegment Point="22,2.5" />
+          <LineSegment Point="22,5.5" />
+          <LineSegment Point="2,5.5" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="2,8" IsClosed="True">
+        <PathFigure.Segments>
+          <LineSegment Point="19,8" />
+          <LineSegment Point="19,11" />
+          <LineSegment Point="2,11" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="5,13.5" IsClosed="True">
+        <PathFigure.Segments>
+          <LineSegment Point="22,13.5" />
+          <LineSegment Point="22,16.5" />
+          <LineSegment Point="5,16.5" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="2,19" IsClosed="True">
+        <PathFigure.Segments>
+          <LineSegment Point="22,19" />
+          <LineSegment Point="22,22" />
+          <LineSegment Point="2,22" />
+        </PathFigure.Segments>
+      </PathFigure>
+    </PathGeometry.Figures>
+  </PathGeometry>
+  <PathGeometry x:Key="EffectsIconGlitch" FillRule="EvenOdd">
+    <PathGeometry.Figures>
+      <PathFigure StartPoint="2,2" IsClosed="True">
+        <PathFigure.Segments>
+          <LineSegment Point="15,2" />
+          <LineSegment Point="15,6" />
+          <LineSegment Point="2,6" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="19,2" IsClosed="True">
+        <PathFigure.Segments>
+          <LineSegment Point="22,2" />
+          <LineSegment Point="22,6" />
+          <LineSegment Point="19,6" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="6,8" IsClosed="True">
+        <PathFigure.Segments>
+          <LineSegment Point="22,8" />
+          <LineSegment Point="22,12" />
+          <LineSegment Point="6,12" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="2,14" IsClosed="True">
+        <PathFigure.Segments>
+          <LineSegment Point="14,14" />
+          <LineSegment Point="14,18" />
+          <LineSegment Point="2,18" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="18,14" IsClosed="True">
+        <PathFigure.Segments>
+          <LineSegment Point="22,14" />
+          <LineSegment Point="22,18" />
+          <LineSegment Point="18,18" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="9,20" IsClosed="True">
+        <PathFigure.Segments>
+          <LineSegment Point="22,20" />
+          <LineSegment Point="22,23" />
+          <LineSegment Point="9,23" />
+        </PathFigure.Segments>
+      </PathFigure>
+    </PathGeometry.Figures>
+  </PathGeometry>
+  <PathGeometry x:Key="EffectsIconDots" FillRule="EvenOdd">
+    <PathGeometry.Figures>
+      <PathFigure StartPoint="7.1,4.5" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="7.1,5.93594" Point2="5.93594,7.1" Point3="4.5,7.1" />
+          <BezierSegment Point1="3.06406,7.1" Point2="1.9,5.93594" Point3="1.9,4.5" />
+          <BezierSegment Point1="1.9,3.06406" Point2="3.06406,1.9" Point3="4.5,1.9" />
+          <BezierSegment Point1="5.93594,1.9" Point2="7.1,3.06406" Point3="7.1,4.5" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="7.1,12" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="7.1,13.4359" Point2="5.93594,14.6" Point3="4.5,14.6" />
+          <BezierSegment Point1="3.06406,14.6" Point2="1.9,13.4359" Point3="1.9,12" />
+          <BezierSegment Point1="1.9,10.5641" Point2="3.06406,9.4" Point3="4.5,9.4" />
+          <BezierSegment Point1="5.93594,9.4" Point2="7.1,10.5641" Point3="7.1,12" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="7.1,19.5" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="7.1,20.9359" Point2="5.93594,22.1" Point3="4.5,22.1" />
+          <BezierSegment Point1="3.06406,22.1" Point2="1.9,20.9359" Point3="1.9,19.5" />
+          <BezierSegment Point1="1.9,18.0641" Point2="3.06406,16.9" Point3="4.5,16.9" />
+          <BezierSegment Point1="5.93594,16.9" Point2="7.1,18.0641" Point3="7.1,19.5" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="14.6,4.5" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="14.6,5.93594" Point2="13.4359,7.1" Point3="12,7.1" />
+          <BezierSegment Point1="10.5641,7.1" Point2="9.4,5.93594" Point3="9.4,4.5" />
+          <BezierSegment Point1="9.4,3.06406" Point2="10.5641,1.9" Point3="12,1.9" />
+          <BezierSegment Point1="13.4359,1.9" Point2="14.6,3.06406" Point3="14.6,4.5" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="14.6,12" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="14.6,13.4359" Point2="13.4359,14.6" Point3="12,14.6" />
+          <BezierSegment Point1="10.5641,14.6" Point2="9.4,13.4359" Point3="9.4,12" />
+          <BezierSegment Point1="9.4,10.5641" Point2="10.5641,9.4" Point3="12,9.4" />
+          <BezierSegment Point1="13.4359,9.4" Point2="14.6,10.5641" Point3="14.6,12" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="14.6,19.5" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="14.6,20.9359" Point2="13.4359,22.1" Point3="12,22.1" />
+          <BezierSegment Point1="10.5641,22.1" Point2="9.4,20.9359" Point3="9.4,19.5" />
+          <BezierSegment Point1="9.4,18.0641" Point2="10.5641,16.9" Point3="12,16.9" />
+          <BezierSegment Point1="13.4359,16.9" Point2="14.6,18.0641" Point3="14.6,19.5" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="22.1,4.5" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="22.1,5.93594" Point2="20.9359,7.1" Point3="19.5,7.1" />
+          <BezierSegment Point1="18.0641,7.1" Point2="16.9,5.93594" Point3="16.9,4.5" />
+          <BezierSegment Point1="16.9,3.06406" Point2="18.0641,1.9" Point3="19.5,1.9" />
+          <BezierSegment Point1="20.9359,1.9" Point2="22.1,3.06406" Point3="22.1,4.5" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="22.1,12" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="22.1,13.4359" Point2="20.9359,14.6" Point3="19.5,14.6" />
+          <BezierSegment Point1="18.0641,14.6" Point2="16.9,13.4359" Point3="16.9,12" />
+          <BezierSegment Point1="16.9,10.5641" Point2="18.0641,9.4" Point3="19.5,9.4" />
+          <BezierSegment Point1="20.9359,9.4" Point2="22.1,10.5641" Point3="22.1,12" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="22.1,19.5" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="22.1,20.9359" Point2="20.9359,22.1" Point3="19.5,22.1" />
+          <BezierSegment Point1="18.0641,22.1" Point2="16.9,20.9359" Point3="16.9,19.5" />
+          <BezierSegment Point1="16.9,18.0641" Point2="18.0641,16.9" Point3="19.5,16.9" />
+          <BezierSegment Point1="20.9359,16.9" Point2="22.1,18.0641" Point3="22.1,19.5" />
+        </PathFigure.Segments>
+      </PathFigure>
+    </PathGeometry.Figures>
+  </PathGeometry>
+  <PathGeometry x:Key="EffectsIconBlur" FillRule="EvenOdd">
+    <PathGeometry.Figures>
+      <PathFigure StartPoint="17,12" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="17,16.4183" Point2="13.4183,20" Point3="9,20" />
+          <BezierSegment Point1="4.58172,20" Point2="1,16.4183" Point3="1,12" />
+          <BezierSegment Point1="1,7.58172" Point2="4.58172,4" Point3="9,4" />
+          <BezierSegment Point1="13.4183,4" Point2="17,7.58172" Point3="17,12" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="13,12" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="13,14.2091" Point2="11.2091,16" Point3="9,16" />
+          <BezierSegment Point1="6.79086,16" Point2="5,14.2091" Point3="5,12" />
+          <BezierSegment Point1="5,9.79086" Point2="6.79086,8" Point3="9,8" />
+          <BezierSegment Point1="11.2091,8" Point2="13,9.79086" Point3="13,12" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="22.3,4.5" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="22.3,5.49411" Point2="21.4941,6.3" Point3="20.5,6.3" />
+          <BezierSegment Point1="19.5059,6.3" Point2="18.7,5.49411" Point3="18.7,4.5" />
+          <BezierSegment Point1="18.7,3.50589" Point2="19.5059,2.7" Point3="20.5,2.7" />
+          <BezierSegment Point1="21.4941,2.7" Point2="22.3,3.50589" Point3="22.3,4.5" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="22.6,12" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="22.6,12.8837" Point2="21.8837,13.6" Point3="21,13.6" />
+          <BezierSegment Point1="20.1163,13.6" Point2="19.4,12.8837" Point3="19.4,12" />
+          <BezierSegment Point1="19.4,11.1163" Point2="20.1163,10.4" Point3="21,10.4" />
+          <BezierSegment Point1="21.8837,10.4" Point2="22.6,11.1163" Point3="22.6,12" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="22.3,19.5" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="22.3,20.4941" Point2="21.4941,21.3" Point3="20.5,21.3" />
+          <BezierSegment Point1="19.5059,21.3" Point2="18.7,20.4941" Point3="18.7,19.5" />
+          <BezierSegment Point1="18.7,18.5059" Point2="19.5059,17.7" Point3="20.5,17.7" />
+          <BezierSegment Point1="21.4941,17.7" Point2="22.3,18.5059" Point3="22.3,19.5" />
+        </PathFigure.Segments>
+      </PathFigure>
+    </PathGeometry.Figures>
+  </PathGeometry>
+  <PathGeometry x:Key="EffectsIconDistortion" FillRule="EvenOdd">
+    <PathGeometry.Figures>
+      <PathFigure StartPoint="2,4" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="7,0" Point2="9,0" Point3="14,4" />
+          <BezierSegment Point1="17,6" Point2="19,6" Point3="22,3" />
+          <LineSegment Point="22,7" />
+          <BezierSegment Point1="18,10" Point2="15,10" Point3="11,7" />
+          <BezierSegment Point1="8,5" Point2="6,4" Point3="2,8" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="2,13" IsClosed="True">
+        <PathFigure.Segments>
+          <BezierSegment Point1="7,9" Point2="9,9" Point3="14,13" />
+          <BezierSegment Point1="17,15" Point2="19,15" Point3="22,12" />
+          <LineSegment Point="22,16" />
+          <BezierSegment Point1="18,19" Point2="15,19" Point3="11,16" />
+          <BezierSegment Point1="8,14" Point2="6,13" Point3="2,17" />
+        </PathFigure.Segments>
+      </PathFigure>
+    </PathGeometry.Figures>
+  </PathGeometry>
+  <PathGeometry x:Key="EffectsIconAudio" FillRule="EvenOdd">
+    <PathGeometry.Figures>
+      <PathFigure StartPoint="3.5,9" IsClosed="True">
+        <PathFigure.Segments>
+          <QuadraticBezierSegment Point1="5,9" Point2="5,10.5" />
+          <LineSegment Point="5,13.5" />
+          <QuadraticBezierSegment Point1="5,15" Point2="3.5,15" />
+          <QuadraticBezierSegment Point1="2,15" Point2="2,13.5" />
+          <LineSegment Point="2,10.5" />
+          <QuadraticBezierSegment Point1="2,9" Point2="3.5,9" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="7.75,5" IsClosed="True">
+        <PathFigure.Segments>
+          <QuadraticBezierSegment Point1="9.25,5" Point2="9.25,6.5" />
+          <LineSegment Point="9.25,17.5" />
+          <QuadraticBezierSegment Point1="9.25,19" Point2="7.75,19" />
+          <QuadraticBezierSegment Point1="6.25,19" Point2="6.25,17.5" />
+          <LineSegment Point="6.25,6.5" />
+          <QuadraticBezierSegment Point1="6.25,5" Point2="7.75,5" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="12,1" IsClosed="True">
+        <PathFigure.Segments>
+          <QuadraticBezierSegment Point1="13.5,1" Point2="13.5,2.5" />
+          <LineSegment Point="13.5,21.5" />
+          <QuadraticBezierSegment Point1="13.5,23" Point2="12,23" />
+          <QuadraticBezierSegment Point1="10.5,23" Point2="10.5,21.5" />
+          <LineSegment Point="10.5,2.5" />
+          <QuadraticBezierSegment Point1="10.5,1" Point2="12,1" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="16.25,5" IsClosed="True">
+        <PathFigure.Segments>
+          <QuadraticBezierSegment Point1="17.75,5" Point2="17.75,6.5" />
+          <LineSegment Point="17.75,17.5" />
+          <QuadraticBezierSegment Point1="17.75,19" Point2="16.25,19" />
+          <QuadraticBezierSegment Point1="14.75,19" Point2="14.75,17.5" />
+          <LineSegment Point="14.75,6.5" />
+          <QuadraticBezierSegment Point1="14.75,5" Point2="16.25,5" />
+        </PathFigure.Segments>
+      </PathFigure>
+      <PathFigure StartPoint="20.5,9" IsClosed="True">
+        <PathFigure.Segments>
+          <QuadraticBezierSegment Point1="22,9" Point2="22,10.5" />
+          <LineSegment Point="22,13.5" />
+          <QuadraticBezierSegment Point1="22,15" Point2="20.5,15" />
+          <QuadraticBezierSegment Point1="19,15" Point2="19,13.5" />
+          <LineSegment Point="19,10.5" />
+          <QuadraticBezierSegment Point1="19,9" Point2="20.5,9" />
+        </PathFigure.Segments>
+      </PathFigure>
+    </PathGeometry.Figures>
+  </PathGeometry>
+  <PathGeometry x:Key="EffectsIconCheck" FillRule="EvenOdd">
+    <PathGeometry.Figures>
+      <PathFigure StartPoint="2,12" IsClosed="True">
+        <PathFigure.Segments>
+          <LineSegment Point="6,8" />
+          <LineSegment Point="10,12" />
+          <LineSegment Point="19,3" />
+          <LineSegment Point="23,7" />
+          <LineSegment Point="10,20" />
+        </PathFigure.Segments>
+      </PathFigure>
+    </PathGeometry.Figures>
+  </PathGeometry>
+ <PathGeometry x:Key="EffectsIconTaskbar" FillRule="EvenOdd"><PathGeometry.Figures><PathFigure StartPoint="2,3" IsClosed="True"><LineSegment Point="22,3"/><LineSegment Point="22,21"/><LineSegment Point="2,21"/></PathFigure><PathFigure StartPoint="5,6" IsClosed="True"><LineSegment Point="19,6"/><LineSegment Point="19,13"/><LineSegment Point="5,13"/></PathFigure><PathFigure StartPoint="5,16" IsClosed="True"><LineSegment Point="8,16"/><LineSegment Point="8,18"/><LineSegment Point="5,18"/></PathFigure><PathFigure StartPoint="10,16" IsClosed="True"><LineSegment Point="13,16"/><LineSegment Point="13,18"/><LineSegment Point="10,18"/></PathFigure><PathFigure StartPoint="15,16" IsClosed="True"><LineSegment Point="19,16"/><LineSegment Point="19,18"/><LineSegment Point="15,18"/></PathFigure></PathGeometry.Figures></PathGeometry>
+</ResourceDictionary>

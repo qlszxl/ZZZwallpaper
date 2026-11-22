@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0-windows</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><RestorePackagesWithLockFile>true</RestorePackagesWithLockFile></PropertyGroup>
+  <ItemGroup><ProjectReference Include="../../src/Shared/Automation/Automation.csproj"/><PackageReference Include="ModelContextProtocol" Version="2.2.0"/></ItemGroup>
+  <ItemGroup><PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.11"/></ItemGroup>
+  <ItemGroup><EmbeddedResource Include="LegacyToolNames.json" /></ItemGroup>
+  <ItemGroup>
+    <Compile Include="../../src/Windows/ControlCenter/Adapters/Automation/AutomationInput.cs" Link="AutomationInput.cs" />
+    <Compile Include="../../src/Windows/ControlCenter/Adapters/Automation/AutomationSnapshotCache.cs" Link="AutomationSnapshotCache.cs" />
+    <Compile Include="../../src/Windows/ControlCenter/Adapters/System/DesktopTargetLauncher.cs" Link="DesktopTargetLauncher.cs" />
+  </ItemGroup>
+  <ItemGroup><ProjectReference Include="../../src/Shared/Application/Application.csproj"/><ProjectReference Include="../../src/Shared/Storage/Storage.csproj"/></ItemGroup>
+</Project>

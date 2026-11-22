@@ -1,0 +1,8 @@
+<Project>
+ <PropertyGroup Condition="'$(MSBuildProjectName)' == 'ControlCenter'"><StartupObject>LumaWall.ControlCenter.PinnedChromeRegressionProgram</StartupObject><DefineConstants>$(DefineConstants);SECTION_REGRESSION</DefineConstants></PropertyGroup>
+ <ItemGroup Condition="'$(MSBuildProjectName)' == 'ControlCenter'">
+  <Compile Remove="App.xaml.cs"/>
+  <Compile Include="$(MSBuildThisFileDirectory)../PinnedChromeUiTests/PinnedChromeRegression.cs"/>
+  <Compile Include="$(MSBuildThisFileDirectory)SectionChecks.cs"/>
+ </ItemGroup>
+</Project>

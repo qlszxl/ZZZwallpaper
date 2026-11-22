@@ -1,0 +1,32 @@
+; Shared wording for the native flow and the non-installing review preview.
+[CustomMessages]
+SettingsTitle=准备安装
+SettingsDescription=选择安装位置，即可开始。
+InstallingTitle=正在安装
+InstallingDescription=让桌面动起来，只差最后一步。
+FinishedTitle=安装完成
+FinishedDescription=一切就绪，开始布置你的桌面。
+InstallLocation=安装位置
+CurrentUserOnly=仅为当前用户安装
+DesktopShortcut=创建桌面快捷方式
+ShortcutDescription=开始菜单入口将一并创建
+StartupDescription=开机启动可在软件设置中开启
+StartInstall=开始安装
+StartUpdate=开始更新
+LaunchWhenFinished=完成后启动 ZZZwallpaper
+Finish=完成
+CancelInstall=取消安装
+CancelConfirm=要取消本次安装吗？
+CancelDescription=安装程序将结束本次操作。若已开始写入文件，将由安装引擎处理取消。
+KeepInstalling=继续安装
+BackToSettings=返回设置
+PreparingFiles=检查安装文件
+CopyingFiles=写入程序文件
+CreatingShortcuts=完成快捷方式与安装记录
+FinishedFiles=安装已完成
+ExistingVersion=发现已有版本，将更新程序并保留壁纸与设置。
+NewerVersion=此位置已有更新版本，请更换目录或退出安装。
+BeforeInstall=开始安装前，可以随时关闭此窗口。
+NoAutoLaunch=仅在勾选后启动软件
+InstallFailed=安装未完成
+InstallCancelled=安装已取消

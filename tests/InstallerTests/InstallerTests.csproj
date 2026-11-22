@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0-windows</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable></PropertyGroup>
+  <ItemGroup><Compile Include="../../src/Windows/InstallerPreview/PersonalDataCleanup.cs" Link="PersonalDataCleanup.cs"/></ItemGroup>
+  <ItemGroup>
+    <Compile Include="../../src/Windows/InstallerPreview/PackageIdentity.cs" Link="PackageIdentity.cs"/>
+    <Compile Include="../../src/Windows/InstallerPreview/PreviewSession.cs" Link="PreviewSession.cs"/>
+    <Compile Include="../../src/Windows/InstallerPreview/InstallationUpgrade.cs" Link="InstallationUpgrade.cs"/>
+    <EmbeddedResource Include="../../installer/Product.json" LogicalName="Product.json"/>
+    <EmbeddedResource Include="../../installer/FlowMessages.isl" LogicalName="FlowMessages.isl"/>
+    <Compile Include="../../src/Windows/InstallerPreview/InstallationProgress.cs" Link="InstallationProgress.cs"/>
+    <Compile Include="../../src/Windows/InstallerPreview/InstallerBackend.cs" Link="InstallerBackend.cs"/>
+    <Compile Include="../../src/Windows/InstallerPreview/UninstallProcesses.cs" Link="UninstallProcesses.cs"/>
+    <Compile Include="../../src/Windows/InstallerPreview/InstallationProcesses.cs" Link="InstallationProcesses.cs"/>
+    <Compile Include="../../src/Windows/Shared/InstallationLifetime.cs" Link="InstallationLifetime.cs"/>
+  </ItemGroup>
+<ItemGroup><Compile Include="../../src/Windows/InstallerPreview/UninstallCompletion.cs" Link="UninstallCompletion.cs"/></ItemGroup>
+<ItemGroup><Compile Include="../../src/Windows/InstallerPreview/UninstallFinalizer.cs" Link="UninstallFinalizer.cs"/></ItemGroup>
+<ItemGroup>
+  <Compile Include="../../src/Windows/InstallerPreview/UninstallTempCleanup.cs" Link="UninstallTempCleanup.cs"/>
+  <EmbeddedResource Include="../../src/Windows/InstallerPreview/UninstallTempCleanup.ps1" LogicalName="UninstallTempCleanup.ps1"/>
+</ItemGroup>
+</Project>

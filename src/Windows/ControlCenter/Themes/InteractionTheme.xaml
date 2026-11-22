@@ -1,0 +1,38 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="using:LumaWall.ControlCenter">
+  <!-- All wrappers borrow one native color animation per compositor. Bindings
+       below carry the static fallback only, and change only when the skin does. -->
+  <local:CompositionAccentBrush x:Key="InteractionAccentBrush" FallbackColor="#F4E600" />
+  <!-- TextBox.SelectionHighlightColor requires a SolidColorBrush. -->
+  <SolidColorBrush x:Key="InteractionTextSelectionBrush" Color="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <!-- Native animated controls cast this fallback resource to SolidColorBrush.
+       A composition wrapper here causes E_NOINTERFACE during ApplyTemplate. -->
+  <SolidColorBrush x:Key="InteractionSolidAccentBrush" Color="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <SolidColorBrush x:Key="SystemControlHighlightAccentBrush" Color="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="AccentFillColorDefaultBrush" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="AccentFillColorSecondaryBrush" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="AccentFillColorTertiaryBrush" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="SliderTrackValueFill" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="SliderTrackValueFillPointerOver" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="SliderTrackValueFillPressed" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="ToggleSwitchFillOn" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="ToggleSwitchFillOnPointerOver" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="ToggleSwitchFillOnPressed" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="ToggleButtonBackgroundChecked" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="ToggleButtonBackgroundCheckedPointerOver" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="ToggleButtonBackgroundCheckedPressed" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="GridViewItemSelectionIndicatorBrush" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="ListViewItemSelectionIndicatorBrush" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <!-- Native list containers use the same selected fill in every pointer state. -->
+  <local:CompositionAccentBrush x:Key="GridViewItemBackgroundSelected" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="GridViewItemBackgroundSelectedPointerOver" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="GridViewItemBackgroundSelectedPressed" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="ListViewItemBackgroundSelected" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="ListViewItemBackgroundSelectedPointerOver" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <local:CompositionAccentBrush x:Key="ListViewItemBackgroundSelectedPressed" FallbackColor="{Binding FallbackColor, Source={StaticResource InteractionAccentBrush}}" />
+  <SolidColorBrush x:Key="GridViewItemForegroundSelected" Color="#101100" />
+  <SolidColorBrush x:Key="GridViewItemForegroundSelectedPointerOver" Color="#101100" />
+  <SolidColorBrush x:Key="GridViewItemForegroundSelectedPressed" Color="#101100" />
+  <SolidColorBrush x:Key="ListViewItemForegroundSelected" Color="#101100" />
+  <SolidColorBrush x:Key="ListViewItemForegroundSelectedPointerOver" Color="#101100" />
+  <SolidColorBrush x:Key="ListViewItemForegroundSelectedPressed" Color="#101100" />
+</ResourceDictionary>

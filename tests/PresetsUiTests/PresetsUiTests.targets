@@ -1,0 +1,18 @@
+<Project>
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'ControlCenter'">
+    <StartupObject>LumaWall.ControlCenter.EffectReorderRegressionProgram</StartupObject>
+    <DefineConstants>$(DefineConstants);PRESETS_REGRESSION</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(MSBuildProjectName)' == 'ControlCenter'">
+    <Compile Remove="App.xaml.cs" />
+    <Compile Remove="App.MenuVolume.cs" />
+    <Compile Remove="Shell/MainWindow.Placement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)../EffectReorderUiTests/EffectReorderRegression.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)../EffectReorderUiTests/EffectReorderPlacement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PresetsUiChecks.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PresetsDetailsUiChecks.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PresetsImportUiChecks.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PresetNameUiaChecks.cs" />
+    <Content Include="$(MSBuildThisFileDirectory)PresetNameUia.ps1" Link="PresetNameUia.ps1" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

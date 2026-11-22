@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><Product>ZZZwallpaper</Product><AssemblyTitle>ZZZwallpaper Desktop Integration</AssemblyTitle><TargetFramework>net8.0-windows</TargetFramework><UseWindowsForms>true</UseWindowsForms><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><AllowUnsafeBlocks>true</AllowUnsafeBlocks></PropertyGroup>
+  <ItemGroup><ProjectReference Include="../../Shared/Contracts/Contracts.csproj" /></ItemGroup>
+  <ItemGroup><Compile Include="../DesktopTheme.cs" Link="DesktopTheme.cs" /></ItemGroup>
+  <ItemGroup><EmbeddedResource Include="../ControlCenter/Assets/Branding/App.ico" LogicalName="ZZZwallpaper.AppIcon" /></ItemGroup>
+</Project>

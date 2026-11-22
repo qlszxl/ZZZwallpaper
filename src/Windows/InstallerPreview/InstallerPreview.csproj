@@ -1,0 +1,73 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>ZZZwallpaper.Setup</AssemblyName>
+    <RootNamespace>ZZZwallpaper.InstallerPreview</RootNamespace>
+    <AssemblyTitle>ZZZwallpaper 安装与卸载</AssemblyTitle>
+    <Product>ZZZwallpaper 安装与卸载</Product>
+    <Description>ZZZwallpaper 中文安装与卸载程序</Description>
+    <InformationalVersion>$(Version)</InformationalVersion>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <RuntimeFrameworkVersion>8.0.8</RuntimeFrameworkVersion>
+    <PlatformTarget>x64</PlatformTarget>
+    <SelfContained>true</SelfContained>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <ApplicationIcon>../ControlCenter/Assets/Branding/App.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="../../../installer/Product.json" LogicalName="Product.json" />
+    <EmbeddedResource Include="UninstallTempCleanup.ps1" LogicalName="UninstallTempCleanup.ps1" />
+    <EmbeddedResource Include="$(InstallerEnginePath)" LogicalName="Installer.Engine" Condition="'$(InstallerEnginePath)' != ''" />
+    <EmbeddedResource Include="$(InstallerPackageInfoPath)" LogicalName="Installer.PackageInfo" Condition="'$(InstallerPackageInfoPath)' != ''" />
+    <Compile Include="../../Shared/Contracts/AppearanceOptions.cs" Link="Shared/AppearanceOptions.cs" />
+    <Compile Include="../Shared/InstallationLifetime.cs" Link="Shared/InstallationLifetime.cs" />
+    <Resource Include="../ControlCenter/Assets/Background/Brand-A.png" Link="Assets/Brand-A.png" />
+    <Resource Include="../ControlCenter/Assets/Branding/wordmark.png" Link="Assets/wordmark.png" />
+    <Resource Include="../ControlCenter/Assets/Branding/App.ico" Link="Assets/App.ico" />
+    <Resource Include="../ControlCenter/Assets/Fonts/SourceHanSansSC-Heavy.otf" Link="Assets/Fonts/SourceHanSansSC-Heavy.otf" />
+    <Resource Include="../ControlCenter/Assets/Fonts/SourceHanSansSC-Medium.otf" Link="Assets/Fonts/SourceHanSansSC-Medium.otf" />
+    <EmbeddedResource Include="../../../installer/FlowMessages.isl" LogicalName="FlowMessages.isl" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Embed the same originals that are shipped as readable files. -->
+    <LegalDocument Include="../../../installer/legal/用户协议.txt" ResourceName="Legal.UserAgreement" Destination="legal/UserAgreement.txt" />
+    <LegalDocument Include="../../../installer/legal/隐私说明.txt" ResourceName="Legal.PrivacyNotice" Destination="legal/PrivacyNotice.txt" />
+    <LegalDocument Include="../../../installer/legal/第三方许可.txt" ResourceName="Legal.ThirdParty" Destination="licenses/第三方许可.txt" />
+    <LegalDocument Include="../../../LICENSE" ResourceName="Legal.Agpl" Destination="licenses/AGPL-3.0.txt" />
+    <LegalDocument Include="../../../NOTICE.md" ResourceName="Legal.Scope" Destination="licenses/NOTICE.md" />
+    <LegalDocument Include="../../../third_party/licenses/FFmpeg-DEPENDENCY-NOTICES.txt" ResourceName="Legal.FFmpegDependencies" Destination="licenses/FFmpeg-DEPENDENCY-NOTICES.txt" />
+    <LegalDocument Include="../../../docs/SOURCE-DISTRIBUTION.md" ResourceName="Legal.SourceDistribution" Destination="licenses/SOURCE-DISTRIBUTION.md" />
+    <LegalDocument Include="../../../.nuget/packages/microsoft.netcore.app.runtime.win-x64/$(RuntimeFrameworkVersion)/LICENSE.TXT" ResourceName="Legal.DotNet" Destination="licenses/DotNet-Runtime-LICENSE.txt" />
+    <LegalDocument Include="../../../.nuget/packages/microsoft.netcore.app.runtime.win-x64/$(RuntimeFrameworkVersion)/THIRD-PARTY-NOTICES.TXT" ResourceName="Legal.DotNetNotices" Destination="licenses/DotNet-Runtime-THIRD-PARTY-NOTICES.txt" />
+    <LegalDocument Include="../../../.nuget/packages/microsoft.windowsdesktop.app.runtime.win-x64/$(RuntimeFrameworkVersion)/LICENSE" ResourceName="Legal.WindowsDesktop" Destination="licenses/WindowsDesktop-Runtime-LICENSE.txt" />
+    <LegalDocument Include="../ControlCenter/Assets/Fonts/LICENSE.txt" ResourceName="Legal.Font" Destination="licenses/SourceHanSans-OFL.txt" />
+    <LegalDocument Include="../ControlCenter/Assets/Fonts/SairaCondensed-OFL.txt" ResourceName="Legal.Saira" Destination="licenses/SairaCondensed-OFL.txt" />
+    <LegalDocument Include="../ControlCenter/Assets/Fonts/Bungee-OFL.txt" ResourceName="Legal.Bungee" Destination="licenses/Bungee-OFL.txt" />
+    <LegalDocument Include="../../../third_party/ffmpeg/LICENSE.txt" ResourceName="Legal.FFmpeg" Destination="licenses/FFmpeg-LICENSE.txt" />
+    <LegalDocument Include="../../../third_party/licenses/GPL-3.0.txt" ResourceName="Legal.Gpl" Destination="licenses/GPL-3.0.txt" />
+    <LegalDocument Include="../../../third_party/translucenttb/LICENSE.md" ResourceName="Legal.TranslucentTB" Destination="licenses/TranslucentTB/LICENSE.md" />
+    <LegalDocument Include="../../../third_party/translucenttb/Detours-MIT.txt" ResourceName="Legal.Detours" Destination="licenses/TranslucentTB/Detours-MIT.txt" />
+    <LegalDocument Include="../../../third_party/translucenttb/WIL-MIT.txt" ResourceName="Legal.Wil" Destination="licenses/TranslucentTB/WIL-MIT.txt" />
+    <LegalDocument Include="../../../third_party/translucenttb/CppWinRT-MIT.txt" ResourceName="Legal.CppWinRT" Destination="licenses/TranslucentTB/CppWinRT-MIT.txt" />
+    <LegalDocument Include="../../../scripts/ffmpeg.lock.json" ResourceName="Legal.FFmpegLock" Destination="licenses/ffmpeg.lock.json" />
+    <LegalDocument Include="../../../.nuget/packages/microsoft.windowsappsdk/1.6.250205002/license.txt" ResourceName="Legal.WindowsAppSDK" Destination="licenses/WindowsAppSDK-LICENSE.txt" />
+    <LegalDocument Include="../../../.nuget/packages/microsoft.windowsappsdk/1.6.250205002/NOTICE.txt" ResourceName="Legal.WindowsAppSDKNotices" Destination="licenses/WindowsAppSDK-NOTICE.txt" />
+    <LegalDocument Include="../../../third_party/licenses/WinUI-MIT.txt" ResourceName="Legal.WinUiSource" Destination="licenses/WinUI-MIT.txt" />
+    <LegalDocument Include="../../../third_party/licenses/WPF-MIT.txt" ResourceName="Legal.WpfSource" Destination="licenses/WPF-MIT.txt" />
+    <LegalDocument Include="../../../third_party/licenses/Microsoft.Data.Sqlite-MIT.txt" ResourceName="Legal.SqliteManaged" Destination="licenses/Microsoft.Data.Sqlite-MIT.txt" />
+    <LegalDocument Include="../../../third_party/licenses/SQLitePCLRaw-LICENSE.txt" ResourceName="Legal.SqliteRaw" Destination="licenses/SQLitePCLRaw-LICENSE.txt" />
+    <LegalDocument Include="../../../third_party/licenses/NuGet-NOTICES.txt" ResourceName="Legal.NuGet" Destination="licenses/NuGet-NOTICES.txt" />
+    <LegalDocument Include="../../../third_party/zxing/LICENSE.txt" ResourceName="Legal.ZXing" Destination="licenses/ZXing-Apache-2.0.txt" />
+    <LegalDocument Include="../../../third_party/zxing/THANKS.txt" ResourceName="Legal.ZXingThanks" Destination="licenses/ZXing-THANKS.txt" />
+    <LegalDocument Include="../../../third_party/mcp/LICENSE.txt" ResourceName="Legal.Mcp" Destination="licenses/MCP-Apache-2.0.txt" />
+    <LegalDocument Include="../../../docs/THIRD-PARTY-NOTICES.md" ResourceName="Legal.ApplicationNotices" Destination="licenses/THIRD-PARTY-NOTICES.md" />
+    <LegalDocument Include="../../../third_party/inno-setup-6.7.3/tools/license.txt" ResourceName="Legal.Inno" Destination="licenses/Inno-Setup-LICENSE.txt" />
+    <EmbeddedResource Include="@(LegalDocument)" LogicalName="%(ResourceName)" />
+    <Content Include="@(LegalDocument)" Link="%(Destination)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

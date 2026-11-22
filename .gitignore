@@ -1,0 +1,45 @@
+**/bin/
+**/obj/
+artifacts/
+# Keep licenses needed by the installer while excluding downloaded binaries.
+/third_party/**
+!/third_party/**/
+!/third_party/**/LICENSE*
+!/third_party/**/license*
+!/third_party/**/COPYING*
+!/third_party/**/NOTICE*
+!/third_party/licenses/FFmpeg-DEPENDENCY-NOTICES.txt
+!/third_party/**/THANKS*
+.nuget/
+.dotnet/
+*.user
+*.log
+data/
+
+# Local verification runs, release archives and design work.
+/docs/0.[0-9]*
+/docs/*验证记录.md
+/docs/*宣传片脚本*.md
+/docs/*验收.md
+/docs/反馈/
+/docs/feedback/
+/docs/diagrams/scan-*
+/docs/*清理*.json
+/docs/delivery-summary.json
+/docs/original-integrity.json
+/docs/source-baseline.json
+/docs/pending-feedback.json
+/installer/legal/*草案*.txt
+/scripts/release-kit/
+*.prompt.txt
+*.provenance.json
+**/Assets/ScanCards/*-audit.json
+**/Assets/WidgetIcons/prompts.json
+**/Assets/EffectPreviews/generation.json
+**/Assets/Branding/manifest.json
+
+# Tracked metadata for restoring the taskbar dependency.
+/third_party/unpacked/
+!/third_party/translucenttb/files.json
+!/third_party/translucenttb/README.md
+!/third_party/translucenttb/*-MIT.txt

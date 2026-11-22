@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>ZZZwallpaper · 安装流程预览</title>
+  <link rel="stylesheet" href="preview.css">
+</head>
+<body>
+<div class="review-bar"><div><span class="live-dot"></span> 安装向导 <span class="review-label">交互预览</span></div><span>所有操作均为模拟，不会安装或启动软件</span></div>
+<main class="stage">
+  <section class="installer" aria-label="ZZZwallpaper 安装向导预览">
+    <header class="window-header">
+      <img src="assets/wordmark.png" alt="ZZZwallpaper" class="wordmark">
+      <span class="window-caption">安装向导</span>
+      <button class="icon-button" id="close-window" aria-label="关闭安装向导">×</button>
+    </header>
+    <div class="workspace">
+      <aside class="brand-panel">
+        <div class="brand-kicker"><span></span> YOUR DESKTOP. YOUR WORLD.</div>
+        <h1>让桌面<br><span>动起来。</span></h1>
+        <p class="brand-subtitle">视频壁纸 · 多屏播放 · 桌面组件</p>
+        <div class="screen-art" aria-hidden="true"><div class="screen-rim"><div class="screen-display"><span class="abstract-z">Z</span><span class="play-symbol">▶</span><span class="screen-caption">MAKE IT YOURS</span></div></div><div class="screen-neck"></div><div class="screen-foot"></div><span class="spark one"></span><span class="spark two"></span></div>
+        <div class="version-pills"><span id="brand-version"></span><span>Windows x64</span></div>
+      </aside>
+      <div class="flow-panel">
+        <ol class="steps" aria-label="安装步骤"><li data-step="settings" aria-current="step"><span>01</span> 安装设置</li><li data-step="progress"><span>02</span> 安装进度</li><li data-step="complete"><span>03</span> 完成</li></ol>
+        <div class="page-area" aria-live="polite">
+          <section class="page" id="page-settings" aria-labelledby="settings-heading">
+            <div class="eyebrow">LET’S GET STARTED</div><h2 id="settings-heading" data-message="SettingsTitle"></h2><p class="subtitle" data-message="SettingsDescription"></p>
+            <div class="inline-notice" id="upgrade-notice" hidden><span class="notice-icon">↗</span><span data-message="ExistingVersion"></span></div>
+            <div class="field"><label for="install-path" data-message="InstallLocation"></label><div class="path-row"><input id="install-path" spellcheck="false" autocomplete="off"><button id="browse-path" class="secondary">更改</button></div><div class="path-meta"><span data-message="CurrentUserOnly"></span><span id="size-label"></span></div><p class="field-error" id="path-error" role="alert" hidden></p></div>
+            <label class="option-row"><input id="desktop-shortcut" type="checkbox" checked><span><strong data-message="DesktopShortcut"></strong><small data-message="ShortcutDescription"></small></span></label>
+            <div class="quiet-note"><span class="tiny-clock">◷</span><span data-message="StartupDescription"></span></div>
+            <div class="page-actions"><button class="primary" id="start-install"><span data-message="StartInstall"></span><span aria-hidden="true">↗</span></button><p class="action-note" data-message="BeforeInstall"></p></div>
+          </section>
+          <section class="page" id="page-progress" aria-labelledby="progress-heading" hidden>
+            <div class="eyebrow">A LITTLE CLOSER</div><h2 id="progress-heading" data-message="InstallingTitle"></h2><p class="subtitle" data-message="InstallingDescription"></p>
+            <div class="progress-number"><span id="percent">0</span><small>%</small><span class="simulated-tag">模拟进度</span></div>
+            <div class="progress-track" id="progressbar" role="progressbar" aria-label="模拟安装进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-fill"></div></div>
+            <p class="progress-status" id="progress-status"></p>
+            <div class="install-stages"><div data-phase="0"><span class="phase-dot"></span><span data-message="PreparingFiles"></span><small></small></div><div data-phase="1"><span class="phase-dot"></span><span data-message="CopyingFiles"></span><small></small></div><div data-phase="2"><span class="phase-dot"></span><span data-message="CreatingShortcuts"></span><small></small></div></div>
+            <div class="progress-destination"><span>目标位置</span><p class="destination"></p></div><div class="progress-bottom"><span>请稍候</span><button class="secondary" id="cancel-progress" data-message="CancelInstall"></button></div>
+          </section>
+          <section class="page" id="page-complete" aria-labelledby="complete-heading" hidden>
+            <div class="completion-icon" aria-hidden="true">✓</div><div class="eyebrow">READY WHEN YOU ARE</div><h2 id="complete-heading" data-message="FinishedTitle"></h2><p class="subtitle" data-message="FinishedDescription"></p>
+            <div class="result-summary"><div><span>安装位置</span><p class="destination"></p></div><div><span>桌面快捷方式</span><strong id="shortcut-result"></strong></div></div>
+            <label class="option-row"><input id="launch-after" type="checkbox"><span><strong data-message="LaunchWhenFinished"></strong><small data-message="NoAutoLaunch"></small></span></label>
+            <div class="page-actions"><button class="primary" id="finish-preview"><span data-message="Finish"></span><span aria-hidden="true">✓</span></button></div>
+          </section>
+          <section class="page" id="page-error" aria-labelledby="error-heading" hidden><div class="result-icon error-icon" aria-hidden="true">!</div><div class="eyebrow">LET’S TRY AGAIN</div><h2 id="error-heading" data-message="InstallFailed"></h2><p class="subtitle" id="error-description"></p><div class="error-detail"><strong id="error-reason"></strong><p id="error-next"></p></div><div class="page-actions"><button class="primary" id="error-back"><span data-message="BackToSettings"></span><span>←</span></button></div></section>
+          <section class="page" id="page-cancelled" aria-labelledby="cancelled-heading" hidden><div class="result-icon" aria-hidden="true">Ⅱ</div><div class="eyebrow">TAKE YOUR TIME</div><h2 id="cancelled-heading" data-message="InstallCancelled"></h2><p class="subtitle">可以返回设置，重新开始。</p><div class="result-summary"><span>本次是流程预览，未写入安装目录。</span></div><div class="page-actions"><button class="primary" id="cancelled-back"><span data-message="BackToSettings"></span><span>←</span></button></div></section>
+        </div>
+      </div>
+    </div>
+    <footer class="window-footer"><span id="footer-version"></span><span class="footer-links"><button id="licenses" class="text-button">第三方许可</button><span class="footer-dot">·</span><span>当前用户安装</span></span></footer>
+  </section>
+  <section id="closed-preview" class="closed-preview" hidden><span class="completion-icon">✓</span><h2>预览已结束</h2><p>没有安装、创建快捷方式或启动任何软件。</p><button class="primary" id="reopen-preview">重新查看</button></section>
+</main>
+<section class="review-controls" aria-label="预览场景控制"><div class="review-heading"><strong>查看其他流程</strong><span>仅影响这个预览</span></div><div class="scenario-row"><label for="scenario">模拟情境</label><select id="scenario"><option value="normal">正常安装</option><option value="upgrade">覆盖更新旧版</option><option value="running">软件仍在运行</option><option value="space">空间不足</option><option value="permission">目录无写入权限</option><option value="newer">已有更高版本</option><option value="failure">写入过程中失败</option></select><button class="secondary" id="reset-preview">重置预览</button><label class="speed-option"><input type="checkbox" id="slow-preview">慢速查看进度</label></div><p id="scenario-description">可修改安装位置和快捷方式，再点击“开始安装”体验完整流程。</p></section>
+<div class="toast" id="toast" role="status" hidden></div>
+<dialog id="cancel-dialog" aria-labelledby="cancel-dialog-title"><h3 id="cancel-dialog-title" data-message="CancelConfirm"></h3><p data-message="CancelDescription"></p><div class="dialog-actions"><button class="secondary" id="confirm-cancel" data-message="CancelInstall"></button><button class="primary small" id="keep-installing" data-message="KeepInstalling"></button></div></dialog>
+<dialog id="path-dialog" aria-labelledby="path-dialog-title"><h3 id="path-dialog-title">更改安装位置</h3><p>填写完整路径。此处仅预览，不会打开或创建文件夹。</p><label for="new-path">安装文件夹</label><input id="new-path" spellcheck="false" autocomplete="off"><div class="path-presets"><button class="secondary" id="default-path">默认位置</button><button class="secondary" id="other-path">示例：D 盘</button></div><p class="field-error" id="dialog-path-error" role="alert" hidden></p><div class="dialog-actions"><button class="secondary" id="discard-path">取消</button><button class="primary small" id="save-path">使用此位置</button></div></dialog>
+<dialog id="license-dialog" aria-labelledby="license-heading"><h3 id="license-heading">第三方许可</h3><p>完整安装包随附 FFmpeg、思源黑体、ZXing、MCP SDK 等依赖的许可文件。</p><p>安装后可在程序目录的 licenses 文件夹查阅。本预览不构成产品许可协议确认。</p><div class="dialog-actions"><button class="primary small" id="close-licenses">知道了</button></div></dialog>
+<script>window.INSTALLER_PREVIEW=__PREVIEW_CONFIG__;</script><script src="preview.js"></script>
+</body></html>

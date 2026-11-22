@@ -1,0 +1,13 @@
+<Application xmlns:local="using:LumaWall.ControlCenter" x:Class="LumaWall.ControlCenter.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ <Application.Resources><ResourceDictionary><ResourceDictionary.MergedDictionaries><XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/><ResourceDictionary Source="Themes/InteractionTheme.xaml"/><ResourceDictionary Source="Themes/ZZZTheme.xaml"/><ResourceDictionary Source="Themes/HomeIcons.xaml"/><ResourceDictionary Source="Themes/HomeSurfaces.xaml"/><ResourceDictionary Source="Themes/CassetteTheme.xaml"/><ResourceDictionary Source="Themes/HomeTheme.xaml"/><ResourceDictionary Source="Themes/LibraryTheme.xaml"/><ResourceDictionary Source="Themes/HomeFeedback.xaml"/><ResourceDictionary Source="Themes/EffectsIcons.xaml"/><ResourceDictionary Source="Themes/EffectsTheme.xaml"/><ResourceDictionary Source="Themes/UtilityIcons.xaml"/><ResourceDictionary Source="Themes/UtilityTheme.xaml"/><ResourceDictionary Source="Themes/MetalButtonTheme.xaml"/><ResourceDictionary Source="Themes/ShellTheme.xaml"/></ResourceDictionary.MergedDictionaries>
+  <Style TargetType="ScrollBar" BasedOn="{StaticResource HomeScrollBar}"/>
+  <Style TargetType="ProgressRing"><Setter Property="Foreground" Value="{StaticResource InteractionSolidAccentBrush}"/></Style>
+  <Style TargetType="MenuFlyoutItem"><Setter Property="local:InteractionFocus.Enabled" Value="True"/><Setter Property="UseSystemFocusVisuals" Value="False"/></Style>
+  <Style TargetType="ToggleMenuFlyoutItem"><Setter Property="local:InteractionFocus.Enabled" Value="True"/><Setter Property="UseSystemFocusVisuals" Value="False"/></Style>
+  <Style TargetType="MenuFlyoutSubItem"><Setter Property="local:InteractionFocus.Enabled" Value="True"/><Setter Property="UseSystemFocusVisuals" Value="False"/></Style>
+  <Style TargetType="MenuFlyoutPresenter"><Setter Property="UseSystemFocusVisuals" Value="False"/></Style>
+  <Style TargetType="ContentDialog"><Setter Property="local:InteractionFocus.Enabled" Value="True"/><Setter Property="UseSystemFocusVisuals" Value="False"/></Style>
+  <!-- Hover labels are intentionally disabled, including framework-generated ones. -->
+  <Style TargetType="ToolTip"><Setter Property="Visibility" Value="Collapsed"/></Style>
+ </ResourceDictionary></Application.Resources>
+</Application>

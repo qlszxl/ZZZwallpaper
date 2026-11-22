@@ -1,0 +1,765 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ZZZwallpaper video effects v10",
+  "description": "Edge/corner large-glitch bursts with independent main/small hue controls and per-event random colors. Migrate v1..v9 before validating.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "Version",
+    "Intensity",
+    "ScanlineStrength",
+    "ScanlineDensity",
+    "RgbOffset",
+    "SoftRadius",
+    "Brightness",
+    "Contrast",
+    "Saturation",
+    "VignetteStrength",
+    "GlowStrength",
+    "GlowThreshold",
+    "NoiseStrength",
+    "Scanlines",
+    "RgbSplit",
+    "Softening",
+    "Vignette",
+    "Glow",
+    "Noise",
+    "ScanlineSpeed",
+    "GlitchStrength",
+    "GlitchRate",
+    "GlitchCoverage",
+    "DotStrength",
+    "DotSpacing",
+    "DotSize",
+    "DotGlowStrength",
+    "DotSpeed",
+    "DotPulse",
+    "ScanlineMotion",
+    "Glitch",
+    "Dots",
+    "DotGlow",
+    "DotMotion",
+    "GlitchRgbOffset",
+    "DotRippleStrength",
+    "DotRippleSpeed",
+    "DotRippleWidth",
+    "DotRippleCount",
+    "GlitchRgbSplit",
+    "GlitchCluster",
+    "DotRipple",
+    "Layer1",
+    "Layer2",
+    "Layer3",
+    "Layer4",
+    "Layer5",
+    "Layer6",
+    "RippleDotStrength",
+    "RippleDotSpacing",
+    "RippleDotSize",
+    "ClusterBlend",
+    "ClusterSize",
+    "ClusterSmallCount",
+    "ScanBendAmplitude",
+    "ScanBendSpan",
+    "ScanBendDensity",
+    "RippleDotGlow",
+    "ScanlineBends",
+    "BlurRadius",
+    "BlurStrength",
+    "DistortionMode",
+    "DistortionStrength",
+    "DistortionScale",
+    "DistortionSpeed",
+    "DistortionCenterX",
+    "DistortionCenterY",
+    "ScanlineWidth",
+    "ScanlineSoftness",
+    "ScanlineAngle",
+    "Blur",
+    "Distortion",
+    "DistortionMotion",
+    "BlurMotion",
+    "BlurMotionMode",
+    "BlurMotionSpeed",
+    "BlurCoverage",
+    "BlurScale",
+    "BlurFeather",
+    "BlurAngle",
+    "LargeGlitch",
+    "LargeGlitchMode",
+    "LargeGlitchArea",
+    "LargeGlitchStrength",
+    "LargeGlitchRate",
+    "LargeGlitchBlend",
+    "LargeGlitchRgbOffset",
+    "GlitchColorShift",
+    "GlitchHueShift",
+    "LargeGlitchInterval",
+    "LargeGlitchDuration",
+    "LargeGlitchSmallCount",
+    "LargeGlitchSmallStrength",
+    "GlitchRandomHue",
+    "LargeGlitchColorShift",
+    "LargeGlitchHueShift",
+    "LargeGlitchRandomHue"
+  ],
+  "properties": {
+    "Version": {
+      "type": "integer",
+      "const": 10,
+      "default": 10
+    },
+    "Intensity": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 1,
+      "description": "fraction"
+    },
+    "ScanlineStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.35,
+      "default": 0.12,
+      "description": "fraction"
+    },
+    "ScanlineDensity": {
+      "type": "number",
+      "minimum": 80,
+      "maximum": 260,
+      "default": 170,
+      "description": "cycles per 1080 final output pixels"
+    },
+    "RgbOffset": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 3,
+      "default": 1.2,
+      "description": "pixels at 1080 output height"
+    },
+    "SoftRadius": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 2,
+      "default": 0.6,
+      "description": "pixels at 1080 output height"
+    },
+    "Brightness": {
+      "type": "number",
+      "minimum": -0.5,
+      "maximum": 0.5,
+      "default": 0,
+      "description": "encoded RGB offset"
+    },
+    "Contrast": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 1.5,
+      "default": 1,
+      "description": "multiplier"
+    },
+    "Saturation": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 2,
+      "default": 1,
+      "description": "multiplier"
+    },
+    "VignetteStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.1,
+      "description": "fraction"
+    },
+    "GlowStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.5,
+      "default": 0.15,
+      "description": "linear-light multiplier"
+    },
+    "GlowThreshold": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.75,
+      "description": "source-encoded level, decoded before extraction"
+    },
+    "NoiseStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.3,
+      "default": 0,
+      "description": "encoded RGB amplitude"
+    },
+    "Scanlines": {
+      "type": "boolean",
+      "default": false
+    },
+    "RgbSplit": {
+      "type": "boolean",
+      "default": false
+    },
+    "Softening": {
+      "type": "boolean",
+      "default": false
+    },
+    "Vignette": {
+      "type": "boolean",
+      "default": false
+    },
+    "Glow": {
+      "type": "boolean",
+      "default": false
+    },
+    "Noise": {
+      "type": "boolean",
+      "default": false
+    },
+    "ScanlineSpeed": {
+      "type": "number",
+      "minimum": -60,
+      "maximum": 60,
+      "default": 0.8,
+      "description": "cycles per second; positive scrolls down"
+    },
+    "GlitchStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.3,
+      "description": "fraction; scales strip displacement and chromatic tearing"
+    },
+    "GlitchRate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 20,
+      "default": 6,
+      "description": "pattern changes per second; zero freezes pattern"
+    },
+    "GlitchCoverage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.2,
+      "description": "fraction of horizontal bands"
+    },
+    "DotStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 1,
+      "description": "blend of original and dot image"
+    },
+    "DotSpacing": {
+      "type": "number",
+      "minimum": 4,
+      "maximum": 40,
+      "default": 12,
+      "description": "pixels at 1080 output height; minimum 2 physical output pixels"
+    },
+    "DotSize": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 1,
+      "default": 0.8,
+      "description": "fraction of dot cell; diameter also responds to source luminance"
+    },
+    "DotGlowStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.4,
+      "description": "local linear-light halo intensity; requires Dots"
+    },
+    "DotSpeed": {
+      "type": "number",
+      "minimum": -2,
+      "maximum": 2,
+      "default": 0.3,
+      "description": "cells per second; positive flows down-right; zero freezes"
+    },
+    "DotPulse": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.35,
+      "description": "radius and glow breathing amount; requires Dots and DotMotion"
+    },
+    "ScanlineMotion": {
+      "type": "boolean",
+      "default": false
+    },
+    "Glitch": {
+      "type": "boolean",
+      "default": false
+    },
+    "Dots": {
+      "type": "boolean",
+      "default": false
+    },
+    "DotGlow": {
+      "type": "boolean",
+      "default": false
+    },
+    "DotMotion": {
+      "type": "boolean",
+      "default": false
+    },
+    "GlitchRgbOffset": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 80,
+      "default": 24,
+      "description": "base glitch RGB separation in pixels at 1080 output height"
+    },
+    "DotRippleStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 2,
+      "default": 1,
+      "description": "linear-light dot halo and core gain"
+    },
+    "DotRippleSpeed": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 4,
+      "default": 0.35,
+      "description": "center-to-corner radii per second; zero freezes rings"
+    },
+    "DotRippleWidth": {
+      "type": "number",
+      "minimum": 0.02,
+      "maximum": 0.5,
+      "default": 0.12,
+      "description": "fraction of center-to-corner radius; effective width capped at .45 / ring count"
+    },
+    "DotRippleCount": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 6,
+      "default": 2,
+      "description": "concentric ring count along center-to-corner radius"
+    },
+    "GlitchRgbSplit": {
+      "type": "boolean",
+      "default": true
+    },
+    "GlitchCluster": {
+      "type": "boolean",
+      "default": false
+    },
+    "DotRipple": {
+      "type": "boolean",
+      "default": false
+    },
+    "Layer1": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 0,
+        "Strength": 0.35,
+        "Rate": 3,
+        "Coverage": 0.8,
+        "Size": 14,
+        "RgbOffset": 14
+      }
+    },
+    "Layer2": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 1,
+        "Strength": 0.22,
+        "Rate": 5,
+        "Coverage": 0.8,
+        "Size": 6,
+        "RgbOffset": 8
+      }
+    },
+    "Layer3": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 2,
+        "Strength": 0.16,
+        "Rate": 11,
+        "Coverage": 0.6,
+        "Size": 3,
+        "RgbOffset": 5
+      }
+    },
+    "Layer4": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 3,
+        "Strength": 0.25,
+        "Rate": 2,
+        "Coverage": 0.75,
+        "Size": 10,
+        "RgbOffset": 12
+      }
+    },
+    "Layer5": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 1,
+        "Strength": 0.18,
+        "Rate": 7,
+        "Coverage": 0.65,
+        "Size": 8,
+        "RgbOffset": 7
+      }
+    },
+    "Layer6": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 0,
+        "Strength": 0.2,
+        "Rate": 9,
+        "Coverage": 0.7,
+        "Size": 5,
+        "RgbOffset": 8
+      }
+    },
+    "RippleDotStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.85
+    },
+    "RippleDotSpacing": {
+      "type": "number",
+      "minimum": 4,
+      "maximum": 40,
+      "default": 12
+    },
+    "RippleDotSize": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 1,
+      "default": 0.8
+    },
+    "ClusterBlend": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.35
+    },
+    "ClusterSize": {
+      "type": "number",
+      "minimum": 0.08,
+      "maximum": 0.4,
+      "default": 0.24
+    },
+    "ClusterSmallCount": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "default": 3
+    },
+    "ScanBendAmplitude": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 80,
+      "default": 16
+    },
+    "ScanBendSpan": {
+      "type": "number",
+      "minimum": 40,
+      "maximum": 800,
+      "default": 240
+    },
+    "ScanBendDensity": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.4
+    },
+    "RippleDotGlow": {
+      "type": "boolean",
+      "default": true
+    },
+    "ScanlineBends": {
+      "type": "boolean",
+      "default": false
+    },
+    "BlurRadius": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 32,
+      "default": 8
+    },
+    "BlurStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 1
+    },
+    "DistortionMode": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2,
+      "default": 0
+    },
+    "DistortionStrength": {
+      "type": "number",
+      "minimum": -1,
+      "maximum": 1,
+      "default": 0.2
+    },
+    "DistortionScale": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 20,
+      "default": 4
+    },
+    "DistortionSpeed": {
+      "type": "number",
+      "minimum": -4,
+      "maximum": 4,
+      "default": 0.25
+    },
+    "DistortionCenterX": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.5
+    },
+    "DistortionCenterY": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.5
+    },
+    "ScanlineWidth": {
+      "type": "number",
+      "minimum": 0.25,
+      "maximum": 12,
+      "default": 3.18
+    },
+    "ScanlineSoftness": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.6
+    },
+    "ScanlineAngle": {
+      "type": "number",
+      "minimum": -90,
+      "maximum": 90,
+      "default": 0
+    },
+    "Blur": {
+      "type": "boolean",
+      "default": false
+    },
+    "Distortion": {
+      "type": "boolean",
+      "default": false
+    },
+    "DistortionMotion": {
+      "type": "boolean",
+      "default": false
+    },
+    "BlurMotion": {
+      "type": "boolean",
+      "default": false
+    },
+    "BlurMotionMode": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2,
+      "default": 0
+    },
+    "BlurMotionSpeed": {
+      "type": "number",
+      "minimum": -2,
+      "maximum": 2,
+      "default": 0.08
+    },
+    "BlurCoverage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.45
+    },
+    "BlurScale": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 8,
+      "default": 2
+    },
+    "BlurFeather": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.45
+    },
+    "BlurAngle": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180,
+      "default": 25
+    },
+    "LargeGlitch": {
+      "type": "boolean",
+      "default": false
+    },
+    "LargeGlitchMode": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "default": 3,
+      "description": "0 horizontal, 1 vertical, 2 block, 3 automatic shape with perimeter/corner/center placement."
+    },
+    "LargeGlitchArea": {
+      "type": "number",
+      "minimum": 0.2,
+      "maximum": 0.6,
+      "default": 0.35
+    },
+    "LargeGlitchStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.45
+    },
+    "LargeGlitchRate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 20,
+      "default": 12,
+      "description": "Internal changes per second during a burst; zero freezes each burst pattern, not the burst schedule."
+    },
+    "LargeGlitchBlend": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.7
+    },
+    "LargeGlitchRgbOffset": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 80,
+      "default": 28
+    },
+    "GlitchColorShift": {
+      "type": "boolean",
+      "default": false,
+      "description": "Color shift for companion patches, digital glitch and legacy localized cluster only."
+    },
+    "GlitchHueShift": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180,
+      "default": 45,
+      "description": "Fixed small/digital/cluster HSV hue rotation in degrees; unused while GlitchRandomHue is enabled."
+    },
+    "LargeGlitchInterval": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 20,
+      "default": 4,
+      "description": "Seconds between burst starts, following continuous video time."
+    },
+    "LargeGlitchDuration": {
+      "type": "number",
+      "minimum": 0.05,
+      "maximum": 0.9,
+      "default": 0.25,
+      "description": "Seconds per burst; always shorter than the minimum interval."
+    },
+    "LargeGlitchSmallCount": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10,
+      "default": 6
+    },
+    "LargeGlitchSmallStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.55
+    },
+    "GlitchRandomHue": {
+      "type": "boolean",
+      "default": false,
+      "description": "Random small-glitch hues; companions keep independent hues for the whole burst, digital/cluster colors follow each event."
+    },
+    "LargeGlitchColorShift": {
+      "type": "boolean",
+      "default": false
+    },
+    "LargeGlitchHueShift": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180,
+      "default": 45,
+      "description": "Fixed main-region hue rotation in degrees; unused while LargeGlitchRandomHue is enabled."
+    },
+    "LargeGlitchRandomHue": {
+      "type": "boolean",
+      "default": false,
+      "description": "A new main-region hue per burst, stable within that burst."
+    }
+  },
+  "$defs": {
+    "GlitchLayer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Enabled",
+        "Mode",
+        "Strength",
+        "Rate",
+        "Coverage",
+        "Size",
+        "RgbOffset"
+      ],
+      "properties": {
+        "Enabled": {
+          "type": "boolean"
+        },
+        "Mode": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3,
+          "description": "0 horizontal tearing; 1 displaced blocks; 2 thin jitter strips; 3 RGB ghosting"
+        },
+        "Strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "Rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 40,
+          "description": "pattern changes per second"
+        },
+        "Coverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "Size": {
+          "type": "number",
+          "minimum": 2,
+          "maximum": 240,
+          "description": "pixels at 1080 output height"
+        },
+        "RgbOffset": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 80,
+          "description": "pixels at 1080 output height"
+        }
+      }
+    }
+  }
+}

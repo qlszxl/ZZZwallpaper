@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType><TargetFramework>net8.0-windows10.0.19041.0</TargetFramework><TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>LumaWall.ControlCenter</RootNamespace><AssemblyName>ZZZwallpaper</AssemblyName><AssemblyTitle>ZZZwallpaper</AssemblyTitle><Product>ZZZwallpaper</Product><Description>ZZZwallpaper desktop wallpaper control center</Description><ApplicationManifest>app.manifest</ApplicationManifest>
+    <InformationalVersion>$(Version)</InformationalVersion>
+    <WidgetHostPublishDirectory Condition="'$(WidgetHostPublishDirectory)' == ''">../../../artifacts/widget-host-zzzwallpaper</WidgetHostPublishDirectory>
+    <ApplicationIcon>Assets/Branding/App.ico</ApplicationIcon>
+    <UseWinUI>true</UseWinUI><WindowsPackageType>None</WindowsPackageType><WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <Platforms>x64</Platforms><PlatformTarget>x64</PlatformTarget><RuntimeIdentifier>win-x64</RuntimeIdentifier><SelfContained>true</SelfContained>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><AllowUnsafeBlocks>true</AllowUnsafeBlocks><RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
+    <EnableMsixTooling>true</EnableMsixTooling>
+    <DefineConstants>$(DefineConstants);DISABLE_XAML_GENERATED_MAIN</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup><Using Remove="System.Windows.Forms"/><Using Remove="System.Drawing"/></ItemGroup>
+  <ItemGroup><FrameworkReference Include="Microsoft.WindowsDesktop.App.WindowsForms"/></ItemGroup>
+  <ItemGroup><PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.250205002"/></ItemGroup>
+  <ItemGroup><PackageReference Include="ZXing.Net" Version="0.16.11"/></ItemGroup>
+  <ItemGroup><PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.756"/></ItemGroup>
+  <ItemGroup><ProjectReference Include="../DesktopIntegration/DesktopIntegration.csproj"/><ProjectReference Include="../../Shared/Contracts/Contracts.csproj"/></ItemGroup>
+  <ItemGroup><ProjectReference Include="../../Shared/Automation/Automation.csproj"/></ItemGroup>
+  <ItemGroup><Compile Include="../Shared/InstallationLifetime.cs" Link="InstallationLifetime.cs"/></ItemGroup>
+  <ItemGroup><Content Include="../../../artifacts/native/ZZZwallpaper.Launcher.exe;../../../artifacts/native/WallpaperHost.exe;../../../artifacts/native/AudioSpectrumHost.exe;../../../artifacts/native/TaskbarHost.exe;../../../third_party/ffmpeg/bin/*.dll" Link="%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+  <ItemGroup><Content Include="../../../third_party/translucenttb/ExplorerTAP.dll" Link="TaskbarSupport/ExplorerTAP.dll" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+  <ItemGroup><Content Include="$(WidgetHostPublishDirectory)/**/*" Exclude="$(WidgetHostPublishDirectory)/**/*.pdb" Link="Widgets/%(RecursiveDir)%(Filename)%(Extension)" CopyToPublishDirectory="PreserveNewest" CopyToOutputDirectory="PreserveNewest"/></ItemGroup>
+  <ItemGroup><Content Include="Assets/Effects/*.svg" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+  <ItemGroup><Content Include="Assets/ColorPicker/*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+  <ItemGroup><Content Include="Assets/MetalIcons/*.png" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+  <ItemGroup><Content Include="Assets/Cassette/*.png" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+  <ItemGroup><Content Include="Assets/MetalButton/*.png" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+  <ItemGroup><Content Include="Assets/Background/*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+  <ItemGroup><Content Include="Assets/Fonts/*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+  <ItemGroup><Compile Include="../Shared/WidgetPlacement.cs" Link="WidgetPlacement.cs"/><Content Include="Assets/WidgetIcons/*" Exclude="Assets/WidgetIcons/prompts.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+  <ItemGroup><Content Include="Assets/EffectPreviews/*.png" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+  <ItemGroup><Content Include="Assets/Branding/*.ico;Assets/Branding/*.png" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+  <Target Name="ValidateApplicationResources" BeforeTargets="BeforeBuild">
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)\..\..\..\scripts\Validate-UiResources.ps1&quot; -ProjectDirectory &quot;$(MSBuildProjectDirectory)&quot;" />
+  </Target>
+  <ItemGroup><ProjectReference Include="../../Shared/Application/Application.csproj"/><ProjectReference Include="../../Shared/Storage/Storage.csproj"/></ItemGroup>
+  <ItemGroup><Content Include="../../../artifacts/native/ExpansionPacks/base/BasePlayback.dll;../../../artifacts/native/ExpansionPacks/base/ZZZwallpaper.BaseWidgets.dll;../../../artifacts/native/ExpansionPacks/base/TaskbarHost.exe" Link="ExpansionPacks/base/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+</Project>

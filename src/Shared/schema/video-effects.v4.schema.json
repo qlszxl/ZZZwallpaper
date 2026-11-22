@@ -1,0 +1,435 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ZZZwallpaper video effects v4",
+  "description": "Six independently configurable glitch groups and radial dot light waves. New media defaults to original; animation follows continuous media time. Migrate v1..v3 JSON before validating.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "Version",
+    "Intensity",
+    "ScanlineStrength",
+    "ScanlineDensity",
+    "RgbOffset",
+    "SoftRadius",
+    "Brightness",
+    "Contrast",
+    "Saturation",
+    "VignetteStrength",
+    "GlowStrength",
+    "GlowThreshold",
+    "NoiseStrength",
+    "Scanlines",
+    "RgbSplit",
+    "Softening",
+    "Vignette",
+    "Glow",
+    "Noise",
+    "ScanlineSpeed",
+    "GlitchStrength",
+    "GlitchRate",
+    "GlitchCoverage",
+    "DotStrength",
+    "DotSpacing",
+    "DotSize",
+    "DotGlowStrength",
+    "DotSpeed",
+    "DotPulse",
+    "ScanlineMotion",
+    "Glitch",
+    "Dots",
+    "DotGlow",
+    "DotMotion",
+    "GlitchRgbOffset",
+    "DotRippleStrength",
+    "DotRippleSpeed",
+    "DotRippleWidth",
+    "DotRippleCount",
+    "GlitchRgbSplit",
+    "GlitchCluster",
+    "DotRipple",
+    "Layer1",
+    "Layer2",
+    "Layer3",
+    "Layer4",
+    "Layer5",
+    "Layer6"
+  ],
+  "properties": {
+    "Version": {
+      "type": "integer",
+      "const": 4,
+      "default": 4
+    },
+    "Intensity": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 1,
+      "description": "fraction"
+    },
+    "ScanlineStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.35,
+      "default": 0.12,
+      "description": "fraction"
+    },
+    "ScanlineDensity": {
+      "type": "number",
+      "minimum": 80,
+      "maximum": 260,
+      "default": 170,
+      "description": "cycles per 1080 final output pixels"
+    },
+    "RgbOffset": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 3,
+      "default": 1.2,
+      "description": "pixels at 1080 output height"
+    },
+    "SoftRadius": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 2,
+      "default": 0.6,
+      "description": "pixels at 1080 output height"
+    },
+    "Brightness": {
+      "type": "number",
+      "minimum": -0.5,
+      "maximum": 0.5,
+      "default": 0,
+      "description": "encoded RGB offset"
+    },
+    "Contrast": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 1.5,
+      "default": 1,
+      "description": "multiplier"
+    },
+    "Saturation": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 2,
+      "default": 1,
+      "description": "multiplier"
+    },
+    "VignetteStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.1,
+      "description": "fraction"
+    },
+    "GlowStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.5,
+      "default": 0.15,
+      "description": "linear-light multiplier"
+    },
+    "GlowThreshold": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.75,
+      "description": "source-encoded level, decoded before extraction"
+    },
+    "NoiseStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.02,
+      "default": 0,
+      "description": "encoded RGB amplitude"
+    },
+    "Scanlines": {
+      "type": "boolean",
+      "default": false
+    },
+    "RgbSplit": {
+      "type": "boolean",
+      "default": false
+    },
+    "Softening": {
+      "type": "boolean",
+      "default": false
+    },
+    "Vignette": {
+      "type": "boolean",
+      "default": false
+    },
+    "Glow": {
+      "type": "boolean",
+      "default": false
+    },
+    "Noise": {
+      "type": "boolean",
+      "default": false
+    },
+    "ScanlineSpeed": {
+      "type": "number",
+      "minimum": -60,
+      "maximum": 60,
+      "default": 0.8,
+      "description": "cycles per second; positive scrolls down"
+    },
+    "GlitchStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.3,
+      "description": "fraction; scales strip displacement and chromatic tearing"
+    },
+    "GlitchRate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 20,
+      "default": 6,
+      "description": "pattern changes per second; zero freezes pattern"
+    },
+    "GlitchCoverage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.2,
+      "description": "fraction of horizontal bands"
+    },
+    "DotStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 1,
+      "description": "blend of original and dot image"
+    },
+    "DotSpacing": {
+      "type": "number",
+      "minimum": 4,
+      "maximum": 40,
+      "default": 12,
+      "description": "pixels at 1080 output height; minimum 2 physical output pixels"
+    },
+    "DotSize": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 1,
+      "default": 0.8,
+      "description": "fraction of dot cell; diameter also responds to source luminance"
+    },
+    "DotGlowStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.4,
+      "description": "local linear-light halo intensity; requires Dots"
+    },
+    "DotSpeed": {
+      "type": "number",
+      "minimum": -2,
+      "maximum": 2,
+      "default": 0.3,
+      "description": "cells per second; positive flows down-right; zero freezes"
+    },
+    "DotPulse": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.35,
+      "description": "radius and glow breathing amount; requires Dots and DotMotion"
+    },
+    "ScanlineMotion": {
+      "type": "boolean",
+      "default": false
+    },
+    "Glitch": {
+      "type": "boolean",
+      "default": false
+    },
+    "Dots": {
+      "type": "boolean",
+      "default": false
+    },
+    "DotGlow": {
+      "type": "boolean",
+      "default": false
+    },
+    "DotMotion": {
+      "type": "boolean",
+      "default": false
+    },
+    "GlitchRgbOffset": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 80,
+      "default": 24,
+      "description": "base glitch RGB separation in pixels at 1080 output height"
+    },
+    "DotRippleStrength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 2,
+      "default": 1,
+      "description": "linear-light dot halo and core gain"
+    },
+    "DotRippleSpeed": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 4,
+      "default": 0.35,
+      "description": "center-to-corner radii per second; zero freezes rings"
+    },
+    "DotRippleWidth": {
+      "type": "number",
+      "minimum": 0.02,
+      "maximum": 0.5,
+      "default": 0.12,
+      "description": "fraction of center-to-corner radius; effective width capped at .45 / ring count"
+    },
+    "DotRippleCount": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 6,
+      "default": 2,
+      "description": "concentric ring count along center-to-corner radius"
+    },
+    "GlitchRgbSplit": {
+      "type": "boolean",
+      "default": true
+    },
+    "GlitchCluster": {
+      "type": "boolean",
+      "default": false
+    },
+    "DotRipple": {
+      "type": "boolean",
+      "default": false
+    },
+    "Layer1": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 0,
+        "Strength": 0.45,
+        "Rate": 7,
+        "Coverage": 0.22,
+        "Size": 28,
+        "RgbOffset": 28
+      }
+    },
+    "Layer2": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 1,
+        "Strength": 0.35,
+        "Rate": 3.5,
+        "Coverage": 0.12,
+        "Size": 120,
+        "RgbOffset": 18
+      }
+    },
+    "Layer3": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 2,
+        "Strength": 0.18,
+        "Rate": 19,
+        "Coverage": 0.25,
+        "Size": 4,
+        "RgbOffset": 12
+      }
+    },
+    "Layer4": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 3,
+        "Strength": 0.55,
+        "Rate": 2.3,
+        "Coverage": 0.55,
+        "Size": 180,
+        "RgbOffset": 48
+      }
+    },
+    "Layer5": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 1,
+        "Strength": 0.22,
+        "Rate": 11,
+        "Coverage": 0.08,
+        "Size": 44,
+        "RgbOffset": 34
+      }
+    },
+    "Layer6": {
+      "$ref": "#/$defs/GlitchLayer",
+      "default": {
+        "Enabled": true,
+        "Mode": 0,
+        "Strength": 0.28,
+        "Rate": 13,
+        "Coverage": 0.16,
+        "Size": 9,
+        "RgbOffset": 8
+      }
+    }
+  },
+  "$defs": {
+    "GlitchLayer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Enabled",
+        "Mode",
+        "Strength",
+        "Rate",
+        "Coverage",
+        "Size",
+        "RgbOffset"
+      ],
+      "properties": {
+        "Enabled": {
+          "type": "boolean"
+        },
+        "Mode": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3,
+          "description": "0 horizontal tearing; 1 displaced blocks; 2 thin jitter strips; 3 RGB ghosting"
+        },
+        "Strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "Rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 40,
+          "description": "pattern changes per second"
+        },
+        "Coverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "Size": {
+          "type": "number",
+          "minimum": 2,
+          "maximum": 240,
+          "description": "pixels at 1080 output height"
+        },
+        "RgbOffset": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 80,
+          "description": "pixels at 1080 output height"
+        }
+      }
+    }
+  }
+}

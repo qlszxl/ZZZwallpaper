@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="400" viewBox="0 0 460 400">
+<defs>
+ <linearGradient id="rim" x2="0" y2="1"><stop stop-color="#626262"/><stop offset=".12" stop-color="#1b1b1b"/><stop offset=".85" stop-color="#101010"/><stop offset="1" stop-color="#424242"/></linearGradient>
+ <linearGradient id="tray" x2=".85" y2="1"><stop stop-color="#292929"/><stop offset=".48" stop-color="#131313"/><stop offset="1" stop-color="#222222"/></linearGradient>
+ <linearGradient id="rail" x2="1" y2="0"><stop stop-color="#080808"/><stop offset=".28" stop-color="#4d4d4d"/><stop offset=".55" stop-color="#242424"/><stop offset="1" stop-color="#080808"/></linearGradient>
+ <linearGradient id="hub" x2="1" y2="1"><stop stop-color="#454545"/><stop offset=".22" stop-color="#161616"/><stop offset=".65" stop-color="#242424"/><stop offset="1" stop-color="#080808"/></linearGradient>
+</defs>
+<rect x="1" y="1" width="458" height="398" rx="14" fill="#050505" stroke="#343434" stroke-width="2"/>
+<rect x="9" y="10" width="442" height="380" rx="8" fill="url(#rim)"/>
+<rect x="12" y="12" width="436" height="374" rx="6" fill="#030303"/>
+<rect x="27" y="14" width="406" height="370" rx="5" fill="url(#tray)" stroke="#434343"/>
+<rect x="30" y="17" width="400" height="364" rx="4" fill="none" stroke="#080808" stroke-width="2"/>
+
+<rect x="12" y="14" width="12" height="364" rx="2" fill="url(#rail)"/>
+<rect x="14" y="88" width="8" height="120" rx="2" fill="#030303" stroke="#454545"/>
+<rect x="436" y="14" width="12" height="364" rx="2" fill="url(#rail)"/>
+<rect x="438" y="88" width="8" height="120" rx="2" fill="#030303" stroke="#454545"/>
+<circle cx="47" cy="35" r="7" fill="#030303" stroke="#515151"/><circle cx="47" cy="34" r="4.5" fill="url(#hub)"/>
+<circle cx="47" cy="365" r="7" fill="#030303" stroke="#515151"/><circle cx="47" cy="364" r="4.5" fill="url(#hub)"/>
+<circle cx="413" cy="35" r="7" fill="#030303" stroke="#515151"/><circle cx="413" cy="34" r="4.5" fill="url(#hub)"/>
+<circle cx="413" cy="365" r="7" fill="#030303" stroke="#515151"/><circle cx="413" cy="364" r="4.5" fill="url(#hub)"/>
+<circle cx="230" cy="200" r="190" fill="#030303" stroke="#424242" stroke-width="2"/><circle cx="230" cy="200" r="184" fill="#8d8d8d"/><circle cx="230" cy="200" r="181" fill="#191919"/>
+</svg>

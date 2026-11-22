@@ -1,0 +1,20 @@
+<Project>
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'ControlCenter'">
+    <StartupObject>LumaWall.ControlCenter.EffectReorderRegressionProgram</StartupObject>
+    <DefineConstants>$(DefineConstants);DECODE_DIALOG_REGRESSION</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(MSBuildProjectName)' == 'ControlCenter'">
+    <Compile Remove="App.xaml.cs" />
+    <Compile Remove="App.MenuVolume.cs" />
+    <Compile Remove="Shell/MainWindow.Placement.cs" />
+    <Compile Remove="Adapters/System/StartupRegistration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StartupRegistrationFixture.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)../EffectReorderUiTests/EffectReorderRegression.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)../EffectReorderUiTests/EffectReorderPlacement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DecodeDialogChecks.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RefinementUiChecks.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Refinement80UiChecks.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Refinement81UiChecks.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Refinement82UiChecks.cs" />
+  </ItemGroup>
+</Project>
